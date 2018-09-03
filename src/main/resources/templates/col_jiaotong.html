@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>交通环境</title>
+	<link rel="stylesheet" href="/css/col_base.css">
+	<style>
+	.body-r ul {
+		padding: 10px 0 10px 80px;
+	}
+	.body-r h3 {
+		font:20px Arial;
+		font-weight: 700;
+	}
+	.body-r table {
+		width: 100%;
+	}
+	.body-r ul td {
+		float: left;
+		width: 25%;
+		font:18px Arial;
+		color: #363636;
+	}
+	</style>
+</head>
+<body>
+<!-- 顶部开始 -->
+	<div class="top w clearfix">
+		<div class="header-l fl">
+			<img src="/images/col_head.png" />
+			<ul>
+				<li><a href="index">返回首页</a></li>
+				<li><a href="col_zhuanye">学院专业</a></li>
+				<li><a href="col_sheshi">校园设施</a></li>
+				<li><a href="col_zhusu">住宿条件</a></li>
+				<li><a href="col_jiaotong">交通环境</a></li>
+			</ul>
+		</div>
+		<div class="header-r fl">
+			<a href="loginPage" th:if="${session.loginUser==null}">登陆</a>
+			<a href="logupPage" th:if="${session.loginUser==null}">注册</a>
+			<span class="btn btn-default" href="" role="button" th:if="${session.loginUser!=null}" th:text="${session.loginUser}"></span>
+		</div>
+	</div>
+<!-- 顶部结束 -->
+<!-- 内容开始 -->
+<div class="body w clearfix">
+	<div class="body-l fl">
+		<h3>
+			<img src="/images/col_speaker.png"/> 今日热点
+		</h3>
+		<ul>
+			<li>1、校车</li>
+			<li>2、出租车</li>
+			<li>3、滴滴出行</li>
+			<li>4、公交车</li>
+			<li>5、单车、电动车租借</li>
+		</ul>
+	</div>
+	<div class="body-r fl">
+		<img src="/images/col_body.png" />
+		<ul>
+			<table>
+				<h3>校车</h3>
+				<tr>
+					<td>校车路线</td>
+					<td>校车时间</td>
+				</tr>
+			</table>
+		</ul>
+		<ul>
+			<table>
+				<h3>出租车</h3>
+				<tr>
+					<td>能否进入校园</td>
+					<td>进出校园时间</td>
+				</tr>
+			</table>
+		</ul>
+		<ul>
+			<table>
+				<h3>滴滴出行</h3>
+				<tr>
+					<td>能否使用</td>
+					<td>进出校园时间</td>
+				</tr>
+			</table>
+		</ul>
+		<ul>
+			<table>
+				<h3>公交车</h3>
+				<tr>
+					<td>公交站台分布</td>
+					<td>公交名称</td>
+					<td>公交路线</td>
+				</tr>
+			</table>
+		</ul>
+		<ul>
+			<table>
+				<h3>单车租借</h3>
+				<tr>
+					<td>校园租车点</td>
+					<td>租车规则</td>
+				</tr>
+			</table>
+		</ul>
+		<ul>
+			<table>
+				<h3>电动车租借</h3>
+				<tr>
+					<td>校园租车点</td>
+					<td>租车规则</td>
+				</tr>
+			</table>
+		</ul>
+	</div>
+</div>
+<!-- 内容结束 -->
+<!-- 底部开始 -->
+<div class="footer w">
+	<div class="footer-l fl">
+		<img src="/images/col_speaker.png" />
+	</div>
+	<div class="footer-r fl">
+		<p>网站正在升级维护中，敬请期待！<br/>
+		有事可咨询拨打客服电话：18722225555
+		</p>
+	</div>
+</div>
+<!-- 底部结束 -->
+</body>
+</html>

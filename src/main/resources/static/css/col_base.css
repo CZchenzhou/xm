@@ -1,0 +1,154 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font: normal 100% Helvetica, Arial, sans-serif;
+	color: #363636;
+}
+.w {
+ 	width: 100%;
+ 	max-width: 1128px;
+ 	margin: auto;
+}
+.fr {
+	float: right;
+}
+.fl {
+	float: left;
+}
+li {
+	list-style: none;
+}
+ul {
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+}
+img {
+	width: 100%;
+	height: 100%;
+	vertical-align: top;  /* 去除 图片低测缝隙  图片和文字的基线对齐 */
+}
+.clearfix:before,.clearfix:after { 
+  	content:"";
+  	display: table; 
+}
+.clearfix:after {
+ 	clear:both;
+}
+.clearfix {
+  	*zoom:1;
+}
+.header-l {
+	width: 85%;
+}
+.header-l li{
+	float: left;
+	width: 20%;
+	height:100%;
+	padding: 6px 0;
+	text-align: center;
+	line-height: 100%;
+	border: 1px solid #757A7D;
+}
+.header-l li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	font:18px Arial;
+	color: #363636;
+}
+.header-l li a:hover {
+	color: #2d98bc;
+}
+.header-l li:hover {
+	border-top: #fff;
+	border-bottom: #fff;
+	border-left: #fff;
+}
+.header-l li:last-child:hover {
+	border-right: #fff;
+}
+.header-r {
+	width: 15%;
+	height: 172px;
+	padding: 50px 0;
+	background-color: #ffffcd;
+}
+.header-r a  {
+	display: block;
+	float: left;
+	width: 50%;
+	height: 33px;
+	text-align: center;
+	line-height: 33px;
+	color: #363636;
+	font:14px Arial;
+}
+.header-r a:hover {
+	color: #2d98bc;
+}
+.body {
+	height: 622px;
+}
+.body-l {
+	width: 17%;
+	height: 100%;
+	background-color: #feff99;
+	border:1px solid #757a7d;
+	border-bottom: 0px;
+	padding: 43px 0 0 7px;
+}
+.body-l h3 {
+	font:20px "楷体";
+	color: #393416;
+	line-height: 29px;
+}
+.body-l h3 img {
+	max-width: 39px;
+	margin-right: 10px;
+}
+.body-l ul {
+	padding: 30px 0 0 20px;
+}
+.body-l ul li {
+	font:14px Arial;
+	color: #363636;
+	line-height: 35px;
+}
+.body-r {
+	width: 83%;
+}
+.body-r ul {
+	padding-left: 30px;
+}
+.body-r ul img {
+	padding-left: 40px;
+}
+.footer {
+	height: 80px;
+	background-color: #feff99;
+	border:1px solid #757a7d;
+}
+.footer-l {
+	max-width: 191px;
+	width: 17%;
+	padding: 16px 12px 0 0;
+}
+.footer-l img {
+	float: right;
+	max-width: 39px;
+}
+.footer-r {
+	width: 83%;
+	padding: 16px 0 0 12px;
+}
+.footer-r p {
+	color: #363636;
+	font:14px Arial;
+	float: left;
+}

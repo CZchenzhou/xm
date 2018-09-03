@@ -1,0 +1,140 @@
+﻿ <!DOCTYPE html>
+ <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>日常交流</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <style>
+        #m1{
+            margin-left: -10px;
+        }
+        #m2{
+            margin-right: -10px;
+        }
+        #menu3{
+            margin-top: -10px;
+        }
+    </style>
+
+    </head>
+    <body>
+        <div>
+            <img src="http://pic9.photophoto.cn/20081128/0033033999061521_b.jpg" height="250px" width="100%">
+        </div>
+ 
+<!--    导航-->
+        <div class="container-fluid" style="padding: 0; margin: 0;width: 100%;">
+            <ul class="nav nav-pills row" style="list-style-type: none;" role="tablist">
+                <li class=" col-sm-3 col-md-6 col-lg-4 col-xl-2">
+                    <a  href="index">首页</a>
+                </li>
+                <li class="nav-item col-sm-3 col-md-6 col-lg-4 col-xl-2" >
+                    <a class="nav-link active" data-toggle="pill"  href="#menu1">日常交流</a>
+                </li>
+                <li class="nav-item col-sm-3 col-md-6 col-lg-4 col-xl-2">
+                    <a class="nav-link" data-toggle="pill" href="#menu2">二手转让</a>
+                </li>
+                <li class="nav-item col-sm-3 col-md-6 col-lg-4 col-xl-2">
+                    <a class="nav-link" data-toggle="pill" href="#menu3">我的分享</a>
+                </li>
+                <li class="nav-item col-sm-3 col-md-6 col-lg-4 col-xl-2">
+                    <a class="nav-link" data-toggle="pill" href="#menu4">我有问题</a>
+                </li>
+                <button type="button" class="btn btn-info" th:if="${session.loginUser==null}"><a href="loginPage">登录</a></button>
+                <button type="button" class="btn btn-defaulse" th:if="${session.loginUser==null}"><a href="logupPage">注册</a></button>
+                <span   th:if="${session.loginUser!=null}" th:text="${session.loginUser}"></span>
+            </ul>
+      
+        
+<!--        交互链接-->
+			<div class="tab-content" >
+        <div id="menu1" class="container tab-pane fade active" style="padding: 0; margin: 0;width: 100%;"><br>
+            <div>
+                <form class="navbar-form full-left">
+                    <input type="text" class="search-query" placeholder="请输入你要搜索的信息：">
+                    <button type="submit" class="btn btn-info">搜索</button>
+                </form>
+            </div>
+            <hr size="15" noshade="noshade" color="black" align="left">
+            <div class="media">
+                <a class="pull-left" href="##">
+                    <img class="media-object img-circle" src="https://img4q.duitang.com/uploads/blog/201411/03/20141103163950_uPikX.thumb.700_0.jpeg" height="75px" width="75px" >
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">小太阳</h4>
+                    来自：中国矿业大学
+                </div>
+                <div class="media">
+                    各位校友们你们好：据我所知，矿大的风景特别好。那么，图中这条樱花大道具体位置在哪呢？什么时候开花？
+                </div>
+            </div>
+        </div>
+        <div id="menu2" class="container tab-pane fade" style="padding: 0; margin: 0;width: 100%;"><br>
+            <div>
+                <form class="navbar-form full-left">
+                    <input type="text" class="search-query" placeholder="请输入你要搜索的信息：">
+                    <button type="submit" class="btn">搜索</button>
+                </form>
+                <button class="btn btn-info" id="m2">我要转让</button>
+            </div>
+            <hr size="15" noshade="noshade" color="black" align="left">
+            <div class="media">
+                <a class="pull-left" href="##">
+                    <img class="media-object img-circle" src="http://img1.cache.netease.com/catchpic/C/C9/C9F059FCFBF4BC744F8A25F69B1E5177.jpg" height="75px" width="75px" >
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">日日月月</h4>
+                    来自：中国矿业大学
+                </div><br/>
+                <div><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=441635296,1528425075&fm=27&gp=0.jpg" height="200px" width="300px"></div>
+                <div class="media">
+                    永久自行车曾和梅花、上海等国产品牌一样都是名族企业的骄傲。永久自行车品牌创立于1940年，曾是典型的“国营”品牌。永久自行车从建厂后的十几年l来都是国产自行车中的佼佼者，无论在国内或者国际其品质和设计都有口皆碑。改革开放以来随着各类交通工具的丰富，国营品牌曾一度陷入“困境”，幸运的是经历几番沉浮之后，永久品牌再次迈入国内自行车行业引领者的行列。
+                </div>
+            </div>
+            <hr size="15" noshade="noshade" color="black" align="left">
+            <div class="media">
+                <a class="pull-left" href="##">
+                    <img class="media-object img-circle" src="http://img1.cache.netease.com/catchpic/C/C9/C9F059FCFBF4BC744F8A25F69B1E5177.jpg" height="75px" width="75px" >
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">日日月月</h4>
+                    来自：中国矿业大学
+                </div><br/>
+                <div><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=441635296,1528425075&fm=27&gp=0.jpg" height="200px" width="300px"></div>
+                <div class="media">
+                    永久自行车曾和梅花、上海等国产品牌一样都是名族企业的骄傲。永久自行车品牌创立于1940年，曾是典型的“国营”品牌。永久自行车从建厂后的十几年l来都是国产自行车中的佼佼者，无论在国内或者国际其品质和设计都有口皆碑。改革开放以来随着各类交通工具的丰富，国营品牌曾一度陷入“困境”，幸运的是经历几番沉浮之后，永久品牌再次迈入国内自行车行业引领者的行列。
+                </div>
+            </div>
+        </div>
+        <div id="menu3" class="container tab-pane fade" style="padding: 0; margin: 0;width: 100%;"><br>
+            <img src="/images/com_plus.jpg" height="600px" width="100%p">
+        </div>
+        <div id="menu4" class="container tab-pane fade" style="padding: 0; margin: 0;width: 100%;"><br>
+            <form class="navbar-form full-left">
+                <input type="text" class="search-query" placeholder="请输入你的问题：">
+                <button type="submit" class="btn btn-info">提问</button>
+            </form>
+            <hr size="15" noshade="noshade" color="black" align="left">
+            <div class="media">
+                <a class="pull-left" href="##">
+                    <img class="media-object img-circle" src="https://muyunzhi.com/uploads/allimg/170916/1049542N5-1.jpg" height="75px" width="75px" >
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">日日月月</h4>
+                    来自：中国矿业大学
+                </div>
+                <div class="media">
+                    各位校友们你们好：据我所知，矿大的风景特别好。那么，图中这条樱花大道具体位置在哪呢？什么时候开花？
+                </div>
+            </div>
+        </div>
+			</div>	
+			  </div>
+    </body>
+</html>

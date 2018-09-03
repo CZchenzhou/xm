@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>校园设施</title>
+	<link rel="stylesheet" href="/css/col_base.css">
+	<style>
+	.body-r ul {
+		padding-top: 10px;
+		padding-left: 80px;
+		float: left;
+		width: 30%;
+	}
+	.body-r ul li {
+		font:18px Arial;
+		font-weight: 700;
+		color: #363636;
+		line-height: 43px;
+	}
+	</style>
+</head>
+<body>
+<!-- 顶部开始 -->
+	<div class="top w clearfix">
+		<div class="header-l fl">
+			<img src="/images/col_head.png" />
+			<ul>
+				<li><a href="index">返回首页</a></li>
+				<li><a href="col_zhuanye">学院专业</a></li>
+				<li><a href="col_sheshi">校园设施</a></li>
+				<li><a href="col_zhusu">住宿条件</a></li>
+				<li><a href="col_jiaotong">交通环境</a></li>
+			</ul>
+		</div>
+		<div class="header-r fl">
+			<a href="loginPage" th:if="${session.loginUser==null}">登陆</a>
+			<a href="logupPage" th:if="${session.loginUser==null}">注册</a>
+			<span class="btn btn-default" href="" role="button" th:if="${session.loginUser!=null}" th:text="${session.loginUser}"></span>
+		</div>
+	</div>
+<!-- 顶部结束 -->
+<!-- 内容开始 -->
+<div class="body w clearfix">
+	<div class="body-l fl">
+		<h3>
+			<img src="/images/col_speaker.png"/> 今日热点
+		</h3>
+		<ul>
+			<li>1、自习室</li>
+			<li>2、图书馆</li>
+			<li>3、博物馆</li>
+			<li>4、学院楼</li>
+			<li>5、实验室</li>
+			<li>6、办公室</li>
+			<li>7、饭堂</li>
+			<li>8、便利店</li>
+			<li>9、超市</li>
+			<li>10、咖啡厅</li>
+		</ul>
+	</div>
+	<div class="body-r fl">
+		<img src="/images/col_body.png" />
+		<ul>
+			<li>自习室</li>
+			<li>图书馆</li>
+			<li>博物馆</li>
+			<li>学院楼</li>
+			<li>实验室</li>
+			<li>办公室</li>
+			<li>饭堂</li>
+			<li>便利店</li>
+			<li>超市</li>
+			<li>咖啡厅</li>
+		</ul>
+		<ul>
+			<li>公交车站</li>
+			<li>校园公交</li>
+			<li>租借车辆服务</li>
+			<li>营业厅</li>
+			<li>教学楼</li>
+			<li>体育馆</li>
+			<li>运动场</li>
+			<li>学生公寓</li>
+			<li>游泳馆</li>
+			<li>科教中心</li>
+		</ul>
+	</div>
+</div>
+<!-- 内容结束 -->
+<!-- 底部开始 -->
+<div class="footer w">
+	<div class="footer-l fl">
+		<img src="/images/col_speaker.png" />
+	</div>
+	<div class="footer-r fl">
+		<p>网站正在升级维护中，敬请期待！<br/>
+		有事可咨询拨打客服电话：18722225555
+		</p>
+	</div>
+</div>
+<!-- 底部结束 -->
+</body>
+</html>

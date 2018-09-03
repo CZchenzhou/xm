@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>首页</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+
+    <!--你自己的样式文件 -->
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <style type="text/css">
+        body{ background-color: lightgray; padding-bottom:60px;}
+        .progress-striped{width: 27%;display: table;margin-left: auto;margin-right: auto; border: 5px solid black;}
+        .flex-container {display: flex;justify-content: center; align-items:center;}
+        .navbar-default{display: flex;justify-content: center;width: 80%; margin:0 auto 50px;}
+        .footer{border-top: 1px solid black;}
+        .navbar-header{font: 100 17px "Comic Sans MS";
+            color: blue;
+            text-shadow: 0 0 1px pink,
+            1px -1px 1px red,
+            1px -1px 1px pink,
+            -1px -1px 1px #cd4607,
+            0px -1px 1px #973717,
+            1px -1px 1px yellow; }
+
+        .cumt{width: 100%; margin-bottom: 10px;}
+        .yi{width: 150px;}
+        .talk{list-style: none;}
+        .talk>li{margin-bottom: 20px;}
+    </style>
+
+</head>
+<body>
+<!--登陆组件-->
+<div class="btn-group pull-right btn-group-lg" >
+    <a class="btn btn-default" href="loginPage" role="button" th:if="${session.loginUser==null}">登录</a>
+    <a class="btn btn-default" href="logupPage" role="button" th:if="${session.loginUser==null}">注册</a>
+    <span class="btn btn-default" href="" role="button" th:if="${session.loginUser!=null}" th:text="${session.loginUser}"></span>
+    <div class="btn-group btn-group-lg">
+        <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button" aria-expanded="false">个人中心<span class="caret"></span></button>
+        <ul class="dropdown-menu" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -2px, 0px);">
+            <li><a href="##">我的收藏</a></li>
+            <li><a href="##">浏览历史</a></li>
+            <li><a href="##">个人消息</a></li>
+        </ul>
+    </div>
+</div>
+<br><br><br><br>
+<!--公告-->
+<div class="progress progress-striped active hidden-xs hidden-sm hidden-md">
+    <div class="progress-bar progress-bar-danger" style="width:100%">
+        <h4><span class="glyphicon glyphicon-bullhorn"></span>
+            &nbsp;&nbsp;&nbsp;&nbsp;公告：[[${session.school}]]高数直播···</h4>
+    </div>
+</div>
+<div class="progress progress-striped active hidden-lg">
+    <div class="progress-bar progress-bar-danger" style="width:100%">
+        <span class="glyphicon glyphicon-bullhorn"></span>
+        &nbsp;&nbsp;&nbsp;&nbsp;公告：[[${session.school}]]高数直播···
+    </div>
+</div>
+<br>
+<!--主菜单-->
+<div class="navbar navbar-default " role="navigation">
+    <!--navbar-inverse用于制作底色为黑色的导航条-->
+    <div class="navbar-header">
+
+        <!-- 确保无论是宽屏还是窄屏，navbar-brand都显示 -->
+        <a href="##" class="navbar-brand">大学优life</a>
+    </div>
+    <!-- 屏幕宽度小于768px时，div.navbar-responsive-collapse容器里的内容都会隐藏，显示icon-bar图标 -->
+    <div class="collapse navbar-collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a href="col_index">高校基本信息</a>
+                <!--<span class="badge">4<span class="caret"></span></span> 这玩意是跟在高校基本信息后面的-->
+                <!--<ul class="dropdown-menu " >-->
+                    <!--<li><a href="col_zhuanye">学院专业</a></li>-->
+                    <!--<li><a href="col_sheshi">校园设施</a></li>-->
+                    <!--<li><a href="col_zhusu">住宿条件</a></li>-->
+                    <!--<li><a href="col_jiaotong">交通环境</a></li>-->
+                <!--</ul>-->
+            </li>
+            <li class="dropdown">
+                <a href="stu_index" >学习园地</a>
+
+            </li>
+            <li class="dropdown">
+                <a href="com_index" >日常交流</a>
+
+            </li>
+            <li>
+                <form action="changeSchool" class="navbar-form navbar-left" rol="search" >
+                    <div class="form-group">
+                        <input id="school_name" class="form-control" placeholder="请输入学校名称" type="text" list="schools" name="school_name"
+                               oninput="get()">
+                        <datalist id="schools" >
+                            <option th:each="s:${schools}" >[[${s.name}]]</option>
+                            <option th:if="${schools==null}" >null </option>
+                        </datalist>
+                    </div>
+                    <button type="submit" class="btn btn-default">切换学校</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+    <button class="navbar-toggle pull-right" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <!--data-target与需要折叠内容的div-class一致（也可换成ID，则#ID名）-->
+        <span class="sr-only">Toggle Navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+</div>
+
+<div class="container">
+    <div class="row ">
+        <div class="col-md-5 ">
+            <br>
+            <img src="/images/index_cumt.png" class="cumt">
+            <ul class="media-list pull-right">
+                <li class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object yi" src="/images/index_yishizhuxing.png" alt="...">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading" th:if="${school==null}" th:text="${school}">[[${session.school}]]信息专栏</h4><br>
+                        <p>来这里查找关于[[${session.school}]]的衣食住行，热心学长学姐在线解答。</p>
+                        给与你无微不至的照顾！
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-3 text-center">
+            <h2>大家说</h2>
+            <ul class="talk">
+                <li><h3>1</h3><br>we are...</li>
+                <li><h3>2</h3><br>一起走下去</li>
+                <li><h3>3</h3><br>在一起</li>
+                <li><h3>4</h3><br>永远</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h2>今日话题：七夕</h2>
+            <p>大家七夕都是怎么过的呢？快来分享一波狗粮吧！</p>
+            <img src="http://image2.xyzs.com/upload/e5/04/116917/20130831/137796267768816_0.jpg" class="cumt"><br>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="container footer navbar-fixed-bottom hidden-xs">
+    <div class="row text-center">
+        <div class="col-md-3"></div>
+        <!--这个飘红的java没有错，不要动-->
+        <div class="col-md-2" th:text="${#dates.format(new java.util.Date().getTime(), 'yyyy-MM-dd hh:mm:ss')}">2018-08-17</div>
+        <div class="col-md-2"><a href="http://wpa.qq.com/msgrd?v=3&uin=892698613&site=qq&menu=yes">联系我们</a> </div>
+        <div class="col-md-2">江苏省徐州市<br>中国矿业大学</div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+<script>
+    function  ajaxFunction(){
+        var xmlHttp;
+        try{ // Firefox, Opera 8.0+, Safari
+            xmlHttp=new XMLHttpRequest();
+        }
+        catch (e){
+            try{// Internet Explorer
+                xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+            }
+            catch (e){
+                try{
+                    xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                catch (e){}
+            }
+        }
+        return xmlHttp;
+    }
+    function get() {
+        //1. 创建xmlhttprequest 对象
+        var request = ajaxFunction();
+        //2. 发送请求。
+        // http://localhost:8080/day16/demo01.jsp
+        //http://localhost:8080/day16/DemoServlet01
+        /*
+            参数一： 请求类型  GET or  POST
+            参数二： 请求的路径
+            参数三： 是否异步， true  or false
+        */
+        var school_name= $("#school_name").val();
+        console.log(school_name);
+        request.open("GET" ,"getSchoolByName?school_name="+ school_name,true );
+        request.send();
+    }
+
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
+
+

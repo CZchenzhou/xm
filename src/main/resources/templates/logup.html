@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>注册</title>
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        
+        <!--你自己的样式文件 -->
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<style type="text/css">
+    .carousel-caption {
+    position: absolute;
+    right: 55%;
+    width: 45%;
+    height: 100%;
+    left: 1%;
+    z-index: 10;
+    padding-top: 90px;
+    color: #00CACA;
+    text-align: center;
+}  .pho{
+    padding: 30px;
+    background-image: url('http://pic.pptbz.com/pptpic/201105/2011051822464329.jpg');
+   } 
+
+</style>
+
+    </head>
+    <body>
+
+
+<div class="container">
+    <div class="row" >
+        <div class="col-md-2"></div>
+        <div class="col-md-8 " style="">
+            <div style="width: 100% border: 3px solid red;">
+                <div class="carousel-inner hidden-xs">
+                   <img src="http://pic.chinawenben.com/upload/8_8dr7d3kqdoq1qo7qv3j38drq.jpg"  alt="" style="width: 100%" class="img-responsive ">
+                     <div class="carousel-caption caption-responsive">
+                        <form action="logup" method="get">
+                            <label for="name">用户名&emsp;</label><input id="name" name="username" type="text"><br><br>
+                            <label for="password">密 &nbsp; 码&emsp;</label><input id="password" name="password" type="password">
+
+                        <br>
+                        <div class="form-group">
+                            <label class="radio-inline">
+                                <input value="1" name="gender" type="radio">男
+                            </label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label class="radio-inline">
+                                <input value="0" name="gender" type="radio">女
+                            </label>
+                        </div>
+                            <label for="pho">手机号&emsp;</label><input id="pho" name="telephone" type="text"><br><br>
+                        <br>
+                            <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+                            <button class="btn btn-primary" type="submit">注册</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="pho visible-xs hidden-sm hidden-md hidden-lg text-center">
+                        <form action="logup" method="get">
+                            <label for="name">用户名&emsp;</label><input id="name" name="username" type="text"><br><br>
+                            <label for="password">密 &nbsp; 码&emsp;</label><input id="password" name="password" type="password">
+
+                        <br>
+                        <div class="form-group">
+                            <label class="radio-inline">
+                                <input value="1" name="gender" type="radio">男
+                            </label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label class="radio-inline">
+                                <input value="0" name="gender" type="radio">女
+                            </label>
+                        </div>
+                            <label for="pho">手机号&emsp;</label><input id="pho" name="telephone" type="text"><br><br>
+                        <br>
+                            <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+                            <button class="btn btn-primary" type="submit">注册</button>
+                        </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>   
+    </body>
+</html>
+
+

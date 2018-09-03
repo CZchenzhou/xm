@@ -1,0 +1,1974 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>学习园地</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/css/stu_bootstrap.min.css">
+  	<script src="/js/stu_jquery-3.3.1.min.js"></script>
+  	<script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+  	<script src="/js/stu_bootstrap.min.js"></script>
+	<script src="/js/stu_vue.min.js"></script>
+<style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+body
+{
+	background-color:#b0c4de;
+}
+select
+{
+	background-color: #E9E2E2;
+	width:100%;
+	height: 100%;
+	border: hidden;
+}
+video
+{
+	width:100%;
+	height: 100%;		  
+}
+
+ </style>
+  
+  </head>
+  <body>
+   <div class="container-fluid" style="padding: 0">
+        
+	<div id="head" class="container-fluid" style="padding: 0;">
+		<ul class="row" style="list-style-type: none; padding: 0; margin: 0;">
+      <li  class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-2" style="padding: 0;">
+        <img style="height: 150px;" id="u364_img" class="img " src="/images/stu_u364.png" alt="" width="100%"/>
+      </li>
+      <li class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-8" style="padding: 0;" >
+        <img style="height: 150px;" id="u343_img" class="img " src="/images/stu_u343.jpg" alt="u343_img" width="100%"/>
+      </li>
+      <li  class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-2" style="padding: 0;">
+		  <a href="loginPage" class="btn btn-info btn-lg col-12" role="button" style="padding: 22px" th:if="${session.loginUser==null}">登录</a>
+		  <a href="logupPage" class="btn btn-info btn-lg col-12" role="button" style="padding: 22px" th:if="${session.loginUser==null}">注册</a>
+		  <div class="btn btn-default" role="button" th:if="${session.loginUser!=null}" th:text="${session.loginUser}"></div>
+      </li>
+	</ul>
+	</div>
+	
+<div id="body" class="container-fluid" style="padding: 0; margin: 0;width: 100%;">
+  <ul class="nav nav-pills row bg-light text-dark;" style="list-style-type: none;margin: 0px;" role="tablist">
+    <li class=" col-sm-3 col-md-6 col-lg-4 col-xl-2">
+      <a  href="index">首页</a>
+    </li>
+    <li class="nav-item col-sm-3 col-md-6 col-lg-4 col-xl-2">
+      <a class="nav-link active" data-toggle="pill" href="#menu1">学科前沿</a>
+    </li>
+    <li class="nav-item col-sm-3 col-md-6 col-lg-4 col-xl-2">
+      <a class="nav-link" data-toggle="pill" href="#menu2">推荐文章</a>
+    </li>
+	  <li class="nav-item col-sm-3 col-md-6 col-lg-4 col-xl-2">
+      <a class="nav-link" data-toggle="pill" href="#menu3">学习资源</a>
+    </li>
+	  <li class="nav-item col-sm-3 col-md-6 col-lg-4 col-xl-2">
+      <a class="nav-link" data-toggle="pill" href="#menu4">专业前沿</a>
+    </li>
+	  <li class="nav-item col-sm-3 col-md-6 col-lg-4 col-xl-2">
+      <a class="nav-link" data-toggle="pill" href="#menu5">问题反馈</a>
+    </li>
+  </ul>
+	 <div class="tab-content" style="padding: 0; margin-top:-23px;width: 100%;">
+<div id="menu1" class="container-fluid tab-pane active" style="padding: 0; margin:0;"><br> 
+	<div class="row" style="padding: 0;margin: 0;">
+	<div id="left-leading" class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" style="padding: 0; width:100%;">
+	
+     <div  style="background-color:#f1f1f1;width:100%; height:100%">
+      <ul class="side-nav" style="list-style-type: none;">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Learn HTML</a></li>
+      <li><a href="#">Learn JavaScript</a></li>
+      <li><a href="#">Learn CSS</a></li>
+      <li><a href="#">Learn Foundation</a></li>    
+      <li><a href="#">Learn HTML</a></li>
+      <li><a href="#">Learn JavaScript</a></li>
+      <li><a href="#">Learn CSS</a></li>
+      <li><a href="#">Learn Foundation</a></li>      
+       </ul>
+	 </div>
+		
+	</div>
+<div id="center" class="col-8col-sm-8 col-md-8 col-lg-8 col-xl-8" style="padding: 0; margin: 0;">
+  	<div class="tab-content" style="padding: 0">
+    
+    <div>
+		<div id="demo" class="carousel slide" data-ride="carousel">
+ 
+  <!-- 指示符 -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+	<li data-target="#demo" data-slide-to="3"></li>
+  </ul>
+ 
+  <!-- 轮播图片 -->
+  <div class="carousel-inner" style="height: 250px;padding: 0 margin: 0;">
+    <div class="carousel-item active">
+      <img src="http://static.runoob.com/images/mix/img_fjords_wide.jpg">
+    </div>
+    <div class="carousel-item">
+      <img src="http://static.runoob.com/images/mix/img_nature_wide.jpg">
+    </div>
+    <div class="carousel-item">
+      <img src="http://static.runoob.com/images/mix/img_mountains_wide.jpg">
+    </div>
+	  <div class="carousel-item">
+      <img src="http://static.runoob.com/images/mix/img_mountains_wide.jpg">
+    </div>
+  </div>
+ 
+  <!-- 左右切换按钮 -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+ 
+</div>
+	
+    </div>
+    
+<div class="row" style="margin: 0px;">
+      <!-- 链接列表-->
+      <div id="list-link" class="col-sm-6 col-md-6 col-lg-6 col-xl-6" style="width: 100%; padding: 0;margin-top: 0px;">
+        <select id="list-link-input" size="10">
+         <option value ="volvo">Volvoguagdfauyfgequyfgauyfgafyugafuyaf</option>
+  		 <option value ="saab">Saab</option>
+         <option value="opel">Opel</option>
+  		 <option value="audi">Audi</option>
+		 <option value ="volvo">Volvo</option>
+  		 <option value ="saab">Saab</option>
+         <option value="opel">Opel</option>
+  		 <option value="audi">Audi</option>
+		 <option value ="volvo">Volvo</option>
+  		 <option value ="saab">Saab</option>
+         <option value="opel">Opel</option>
+  		 <option value="audi">Audi</option>
+		 <option value ="volvo">Volvo</option>
+  		 <option value ="saab">Saab</option>
+         <option value="opel">Opel</option>
+  		 <option value="audi">Audi</option>
+		 <option value ="volvo">Volvo</option>
+  		 <option value ="saab">Saab</option>
+         <option value="opel">Opel</option>
+  		 <option value="audi">Audi</option>
+		</select>
+      </div>
+		<div id="video-play" class="col-sm-6 col-md-6 col-lg-6 col-xl-6" style="padding: 0;margin-top: 0px;">
+		<video src="/video/com_video1.Ogg" controls="controls" loop="loop">
+            您的浏览器不支持 video 标签。
+        </video>
+	</div>
+		</div>
+		</div>
+    </div>
+<div id="right-leading" class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" style="padding: 0; width:100%;">
+	
+     <div  style="background-color:#f1f1f1;width:100%; height:100%">
+      <ul class="side-nav" style="list-style-type: none;">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Learn HTML</a></li>
+      <li><a href="#">Learn JavaScript</a></li>
+      <li><a href="#">Learn CSS</a></li>
+      <li><a href="#">Learn Foundation</a></li>    
+      <li><a href="#">Learn HTML</a></li>
+      <li><a href="#">Learn JavaScript</a></li>
+      <li><a href="#">Learn CSS</a></li>
+      <li><a href="#">Learn Foundation</a></li>      
+       </ul>
+	 </div>
+		
+	</div>
+</div>
+</div>
+    <div id="menu2" class="container tab-pane fade" style="padding: 0;margin-left: 0px; margin-right:0px; width:100%;"><br> 
+		<div class="row" style="padding: 0;margin: 0;">
+      <div id="left-leading2" class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" style="padding: 0; width:100%;">
+	
+     <div  style="background-color:#f1f1f1;width:100%; height:100%">
+      <ul class="side-nav" style="list-style-type: none;padding: 0;">
+      <li class="active"><a href="stu_index.html">返回主页</a></li>
+      <li><a href="#">马克思主义、列宁主义、毛泽东思想、邓小平理论</a></li>
+      <li><a href="#">哲学、宗教</a></li>
+      <li><a href="#">社会科学总论</a></li>
+      <li><a href="#">政治、法律</a></li>    
+      <li><a href="#">军事</a></li>
+      <li><a href="#">经济</a></li>
+      <li><a href="#">文化、科学、教育</a></li>
+      <li><a href="#">语言、文字</a></li>
+	  <li><a href="#">文学</a></li>
+      <li><a href="#">艺术</a></li>
+      <li><a href="#">历史</a></li>
+      <li><a href="#">自然科学总论</a></li>    
+      <li><a href="#">数理科学和化学</a></li>
+      <li><a href="#">天文学、地球科学</a></li>
+      <li><a href="#">生物科学</a></li>
+      <li><a href="#">医药、卫生</a></li>
+	  <li><a href="#">农业科学</a></li>
+      <li><a href="#">工业技术</a></li>
+      <li><a href="#">交通运输</a></li>
+      <li><a href="#">航空、航天</a></li>    
+      <li><a href="#">环境科学、安全科学</a></li>
+      <li><a href="#">综合性图书</a></li>
+      <li><a href="#">体育</a></li>
+      <li><a href="#">地理</a></li>   
+       </ul>
+	 </div>
+		
+	</div>
+		<div class="docList_right bdrs3 col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10">
+<div class="docList_top">
+	<div class="filtrate">
+		<div class="fil_2">
+			<ul>
+				<li>
+					<a class="on" href="/clc/2.html?sort=insertDate asc">
+						最新<span class="icons inlineBlock down"></span>
+					</a>
+				</li>
+				<li>
+					<a href="/clc/2.html?sort=downloads desc">下载量<span class="icons inlineBlock"></span></a>
+				</li>
+				<li class="bgNo">
+					<a href="/clc/2.html?sort=views desc">浏览量<span class="icons inlineBlock"></span></a>
+				</li>
+			</ul>
+		</div>
+		<div class="fil_1">排序：</div>
+	</div>
+	<div class="haveDoc">
+	共有文档<span>1814449</span>篇
+	<a class="bdrs5 bulkD_btn_2" id="bd_tj_search_pack" href="javascript:void(0)"><em class="icons inlineBlock"></em>一键打包下载</a>
+	</div>
+</div>
+<div class="document_list">
+	<ul>
+		<li doc-id="1000000095092911">
+			<div class="tool" style="display: block">
+				<div class="collect" data-id="57355762">
+					<a title="收藏" class="collect" onclick="collect_result('57355762');" href="javascript:void(0);"><span class="icons inlineBlock"></span>收藏</a>
+				</div>
+				<!--<div class="share">
+					<a href="javascript:void(0);" class="share_link" title="分享"><span class="icons inlineBlock"></span>分享</a>
+<div class="inside_tk" style="display: none;">
+	<div class="tk_top"></div>
+	<div class="tk_mid">
+		<div class="share_tk">
+			<ul>
+				<li>
+					<a href="javascript:void(0);" onclick="XS.share.tencent({title : '从哲学到非哲学——现、当代西方哲学发展理路批判', url : 'https://www.ixueshu.com/document/1d594080c35a2fbd318947a18e7f9386.html', summary : '在反叛传统绝对主义哲学的潮流中,相对主义精神张扬并灌注于20世纪西方哲学的发展中。哲学从确定性理解走向“非确定性”。后现代哲学的出现,又使哲学理性向“非哲学”滑落。当代西方哲学的“非哲学”意义表现在于:通过力主消解历史,倡导边缘化、形式化、非中心化,模糊了哲学与其它学科的边界,丧失了哲学的合理性与合法性。“非哲学”是西方现代、后现代哲学自我孕育的一种“怪胎”。“非哲学”以相对主义替代绝对主义,使其扭断了哲学发展链条中的必有环节。随着这一环节的修复,随着哲学在绝对、相对统一精神主导下的未来发展,“非哲学”将从理性王国中淡出。'})">
+						<span class="icons inlineBlock share-1"></span>QQ
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" onclick="XS.share.weibo({appkey : '3154435690', title : '从哲学到非哲学——现、当代西方哲学发展理路批判', url : 'https://www.ixueshu.com/document/1d594080c35a2fbd318947a18e7f9386.html', summary : '在反叛传统绝对主义哲学的潮流中,相对主义精神张扬并灌注于20世纪西方哲学的发展中。哲学从确定性理解走向“非确定性”。后现代哲学的出现,又使哲学理性向“非哲学”滑落。当代西方哲学的“非哲学”意义表现在于:通过力主消解历史,倡导边缘化、形式化、非中心化,模糊了哲学与其它学科的边界,丧失了哲学的合理性与合法性。“非哲学”是西方现代、后现代哲学自我孕育的一种“怪胎”。“非哲学”以相对主义替代绝对主义,使其扭断了哲学发展链条中的必有环节。随着这一环节的修复,随着哲学在绝对、相对统一精神主导下的未来发展,“非哲学”将从理性王国中淡出。'})">
+						<span class="icons inlineBlock share-2"></span>新浪微博
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="tk_bot"></div>
+</div>				</div>-->
+			</div>
+			<div class="docPreview_img">
+				<a title="从哲学到非哲学——现、当代西方哲学发展理路批判" href="/document/1d594080c35a2fbd318947a18e7f9386.html" target="_blank">
+					<img width="100%" src="/cover/57355762.html"><span class="doc_page">P.6</span>
+				</a>
+			</div>
+			<div class="doc_intro">
+				<div class="doc_title">
+					<a title="从哲学到非哲学——现、当代西方哲学发展理路批判" class="title outRange" href="/document/1d594080c35a2fbd318947a18e7f9386.html" target="_blank">
+						<script>
+						</script>
+						<span class="icons inlineBlock pdf doc_type"></span>从哲学到非哲学——现、当代西方哲学发展理路批判
+					</a>
+				</div>
+				<div class="field">
+					<span title="哲学、宗教" class="classify inlineBlock"><em>分类：</em>哲学、宗教</span>
+					<span><em>格式：</em>PDF</span>
+					<span><em>积分：</em>0</span>
+					
+					<span class="classify inlineBlock"><em>上传者：</em>姜锦程</span>
+					<span><em>上传时间：</em>2017-02-26</span>
+				</div>
+				<p title="在反叛传统绝对主义哲学的潮流中,相对主义精神张扬并灌注于20世纪西方哲学的发展中。哲学从确定性理解走向“非确定性”。后现代哲学的出现,又使哲学理性向“非哲学”滑落。当代西方哲学的“非哲学”意义表现在于:通过力主消解历史,倡导边缘化、形式化、非中心化,模糊了哲学与其它学科的边界,丧失了哲学的合理性与合法性。“非哲学”是西方现代、后现代哲学自我孕育的一种“怪胎”。“非哲学”以相对主义替代绝对主义,使其扭断了哲学发展链条中的必有环节。随着这一环节的修复,随着哲学在绝对、相对统一精神主导下的未来发展,“非哲学”将从理性王国中淡出。"><em>摘要：</em>在反叛传统绝对主义哲学的潮流中,相对主义精神张扬并灌注于20世纪西方哲学的发展中。哲学从确定性理解走向“非确定性”。后现代哲学的出现,又使哲学理性向“非哲学”滑落。当代西方哲学的“非哲学”意义表现在于:通过力主消解历...</p>
+			</div>
+		</li>
+		<li doc-id="1000000086286111">
+			<div class="tool" style="display: block">
+				<div class="collect" data-id="57345064">
+					<a title="收藏" class="collect" onclick="collect_result('57345064');" href="javascript:void(0);"><span class="icons inlineBlock"></span>收藏</a>
+				</div>
+				<!--<div class="share">
+					<a href="javascript:void(0);" class="share_link" title="分享"><span class="icons inlineBlock"></span>分享</a>
+<div class="inside_tk" style="display: none;">
+	<div class="tk_top"></div>
+	<div class="tk_mid">
+		<div class="share_tk">
+			<ul>
+				<li>
+					<a href="javascript:void(0);" onclick="XS.share.tencent({title : '马克思历史观的主体视角及其当代价值', url : 'https://www.ixueshu.com/document/b7e2ceeeb56e8e49318947a18e7f9386.html', summary : '从马克思的《博士论文》、《1844年经济学哲学手稿》到《关于费尔巴哈的提纲》、《德意志意识形态》和《资本论》以及晚年马克思的思考,贯穿其中的关于社会历史研究中一个重要视角,就是对社会历史主体的关注,从而揭示了社会发展与人的全面发展的内在关联。马克思关于唯物史观全部思考的当代价值,就是要树立“以人为本”的科学发展观,关注社会主体,努力促进人的全面发展。'})">
+						<span class="icons inlineBlock share-1"></span>QQ
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" onclick="XS.share.weibo({appkey : '3154435690', title : '马克思历史观的主体视角及其当代价值', url : 'https://www.ixueshu.com/document/b7e2ceeeb56e8e49318947a18e7f9386.html', summary : '从马克思的《博士论文》、《1844年经济学哲学手稿》到《关于费尔巴哈的提纲》、《德意志意识形态》和《资本论》以及晚年马克思的思考,贯穿其中的关于社会历史研究中一个重要视角,就是对社会历史主体的关注,从而揭示了社会发展与人的全面发展的内在关联。马克思关于唯物史观全部思考的当代价值,就是要树立“以人为本”的科学发展观,关注社会主体,努力促进人的全面发展。'})">
+						<span class="icons inlineBlock share-2"></span>新浪微博
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="tk_bot"></div>
+</div>				</div>-->
+			</div>
+			<div class="docPreview_img">
+				<a title="马克思历史观的主体视角及其当代价值" href="/document/b7e2ceeeb56e8e49318947a18e7f9386.html" target="_blank">
+					<img width="100%" src="/cover/57345064.html"><span class="doc_page">P.5</span>
+				</a>
+			</div>
+			<div class="doc_intro">
+				<div class="doc_title">
+					<a title="马克思历史观的主体视角及其当代价值" class="title outRange" href="/document/b7e2ceeeb56e8e49318947a18e7f9386.html" target="_blank">
+						<script>
+						</script>
+						<span class="icons inlineBlock pdf doc_type"></span>马克思历史观的主体视角及其当代价值
+					</a>
+				</div>
+				<div class="field">
+					<span title="哲学、宗教" class="classify inlineBlock"><em>分类：</em>哲学、宗教</span>
+					<span><em>格式：</em>PDF</span>
+					<span><em>积分：</em>0</span>
+					<span class="classify inlineBlock"><em>机构：</em>安徽师范大学</span>
+					<span class="classify inlineBlock"><em>上传者：</em>孟杰</span>
+					<span><em>上传时间：</em>2017-02-26</span>
+				</div>
+				<p title="从马克思的《博士论文》、《1844年经济学哲学手稿》到《关于费尔巴哈的提纲》、《德意志意识形态》和《资本论》以及晚年马克思的思考,贯穿其中的关于社会历史研究中一个重要视角,就是对社会历史主体的关注,从而揭示了社会发展与人的全面发展的内在关联。马克思关于唯物史观全部思考的当代价值,就是要树立“以人为本”的科学发展观,关注社会主体,努力促进人的全面发展。"><em>摘要：</em>从马克思的《博士论文》、《1844年经济学哲学手稿》到《关于费尔巴哈的提纲》、《德意志意识形态》和《资本论》以及晚年马克思的思考,贯穿其中的关于社会历史研究中一个重要视角,就是对社会历史主体的关注,从而揭示了社会发展...</p>
+			</div>
+		</li>
+		<li doc-id="1000000071064611">
+			<div class="tool" style="display: block">
+				<div class="collect" data-id="57337271">
+					<a title="收藏" class="collect" onclick="collect_result('57337271');" href="javascript:void(0);"><span class="icons inlineBlock"></span>收藏</a>
+				</div>
+				<!--<div class="share">
+					<a href="javascript:void(0);" class="share_link" title="分享"><span class="icons inlineBlock"></span>分享</a>
+<div class="inside_tk" style="display: none;">
+	<div class="tk_top"></div>
+	<div class="tk_mid">
+		<div class="share_tk">
+			<ul>
+				<li>
+					<a href="javascript:void(0);" onclick="XS.share.tencent({title : '法兰克福学派重建马克思主义社会哲学的意义和局限', url : 'https://www.ixueshu.com/document/90c9574367c182fb318947a18e7f9386.html', summary : '以“重建历史唯物主义”为己任的法兰克福学派,对“晚期资本主义社会”及其实践做了比较深入的研究,在三个主要方面对马克思主义社会哲学。进行了历史性的“重建”:一继承了马克思的批判精神,对当代资本主义社会异化现象进行了深刻地剖析;二强调人的主体性,立足于“交往行为”诠释生产力和生产关系;三突出科学技术是第一生产力,试图用“技术决定论”替代马克思关于经济因素对历史发展的最终决定性作用。'})">
+						<span class="icons inlineBlock share-1"></span>QQ
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" onclick="XS.share.weibo({appkey : '3154435690', title : '法兰克福学派重建马克思主义社会哲学的意义和局限', url : 'https://www.ixueshu.com/document/90c9574367c182fb318947a18e7f9386.html', summary : '以“重建历史唯物主义”为己任的法兰克福学派,对“晚期资本主义社会”及其实践做了比较深入的研究,在三个主要方面对马克思主义社会哲学。进行了历史性的“重建”:一继承了马克思的批判精神,对当代资本主义社会异化现象进行了深刻地剖析;二强调人的主体性,立足于“交往行为”诠释生产力和生产关系;三突出科学技术是第一生产力,试图用“技术决定论”替代马克思关于经济因素对历史发展的最终决定性作用。'})">
+						<span class="icons inlineBlock share-2"></span>新浪微博
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="tk_bot"></div>
+</div>				</div>-->
+			</div>
+			<div class="docPreview_img">
+				<a title="法兰克福学派重建马克思主义社会哲学的意义和局限" href="/document/90c9574367c182fb318947a18e7f9386.html" target="_blank">
+					<img width="100%" src="/cover/57337271.html"><span class="doc_page">P.4</span>
+				</a>
+			</div>
+			<div class="doc_intro">
+				<div class="doc_title">
+					<a title="法兰克福学派重建马克思主义社会哲学的意义和局限" class="title outRange" href="/document/90c9574367c182fb318947a18e7f9386.html" target="_blank">
+						<script>
+						</script>
+						<span class="icons inlineBlock pdf doc_type"></span>法兰克福学派重建马克思主义社会哲学的意义和局限
+					</a>
+				</div>
+				<div class="field">
+					<span title="哲学、宗教" class="classify inlineBlock"><em>分类：</em>哲学、宗教</span>
+					<span><em>格式：</em>PDF</span>
+					<span><em>积分：</em>0</span>
+					<span class="classify inlineBlock"><em>机构：</em>吉林大学</span>
+					<span class="classify inlineBlock"><em>上传者：</em>张蕾蕾</span>
+					<span><em>上传时间：</em>2017-02-26</span>
+				</div>
+				<p title="以“重建历史唯物主义”为己任的法兰克福学派,对“晚期资本主义社会”及其实践做了比较深入的研究,在三个主要方面对马克思主义社会哲学。进行了历史性的“重建”:一继承了马克思的批判精神,对当代资本主义社会异化现象进行了深刻地剖析;二强调人的主体性,立足于“交往行为”诠释生产力和生产关系;三突出科学技术是第一生产力,试图用“技术决定论”替代马克思关于经济因素对历史发展的最终决定性作用。"><em>摘要：</em>以“重建历史唯物主义”为己任的法兰克福学派,对“晚期资本主义社会”及其实践做了比较深入的研究,在三个主要方面对马克思主义社会哲学。进行了历史性的“重建”:一继承了马克思的批判精神,对当代资本主义社会异化现象进行了深刻...</p>
+			</div>
+		</li>
+		<li doc-id="1000014821897311">
+			<div class="tool" style="display: block">
+				<div class="collect" data-id="57302107">
+					<a title="收藏" class="collect" onclick="collect_result('57302107');" href="javascript:void(0);"><span class="icons inlineBlock"></span>收藏</a>
+				</div>
+				<!--<div class="share">
+					<a href="javascript:void(0);" class="share_link" title="分享"><span class="icons inlineBlock"></span>分享</a>
+<div class="inside_tk" style="display: none;">
+	<div class="tk_top"></div>
+	<div class="tk_mid">
+		<div class="share_tk">
+			<ul>
+				<li>
+					<a href="javascript:void(0);" onclick="XS.share.tencent({title : '"奥斯维辛"与现代哲学--考察现代哲学转向的一个重要参照系', url : 'https://www.ixueshu.com/document/f6ec8bb0e492e157318947a18e7f9386.html', summary : '&quot;奥斯维辛&quot;是现代人类灵魂深处一个重大的&quot;精神事件&quot;,它极大地影响了哲学的言说方式和存在方式,因而构成了考察和理解现代哲学转向的一个重要参照系.&quot;形而上学的终结&quot;、&quot;道德合理性基础的危机与重建&quot;、&quot;社会统一性基础的寻求&quot;等现代哲学中最为重大的课题,只有置于这一参照系中,才能获得真切的理解和深层的把握.现代哲学也正是在对这些重大课题的思考中,实现了从&quot;终极知识&quot;向&quot;生存智慧&quot;的重大转向.'})">
+						<span class="icons inlineBlock share-1"></span>QQ
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" onclick="XS.share.weibo({appkey : '3154435690', title : '"奥斯维辛"与现代哲学--考察现代哲学转向的一个重要参照系', url : 'https://www.ixueshu.com/document/f6ec8bb0e492e157318947a18e7f9386.html', summary : '&quot;奥斯维辛&quot;是现代人类灵魂深处一个重大的&quot;精神事件&quot;,它极大地影响了哲学的言说方式和存在方式,因而构成了考察和理解现代哲学转向的一个重要参照系.&quot;形而上学的终结&quot;、&quot;道德合理性基础的危机与重建&quot;、&quot;社会统一性基础的寻求&quot;等现代哲学中最为重大的课题,只有置于这一参照系中,才能获得真切的理解和深层的把握.现代哲学也正是在对这些重大课题的思考中,实现了从&quot;终极知识&quot;向&quot;生存智慧&quot;的重大转向.'})">
+						<span class="icons inlineBlock share-2"></span>新浪微博
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="tk_bot"></div>
+</div>				</div>-->
+			</div>
+			<div class="docPreview_img">
+				<a title="奥斯维辛与现代哲学--考察现代哲学转向的一个重要参照系" href="/document/f6ec8bb0e492e157318947a18e7f9386.html" target="_blank">
+					<img width="100%" src="/cover/57302107.html"><span class="doc_page">P.7</span>
+				</a>
+			</div>
+			<div class="doc_intro">
+				<div class="doc_title">
+					<a title="奥斯维辛与现代哲学--考察现代哲学转向的一个重要参照系" class="title outRange" href="/document/f6ec8bb0e492e157318947a18e7f9386.html" target="_blank">
+						<script>
+						</script>
+						<span class="icons inlineBlock pdf doc_type"></span>"奥斯维辛"与现代哲学--考察现代哲学转向的一个重要参照系
+					</a>
+				</div>
+				<div class="field">
+					<span title="哲学、宗教" class="classify inlineBlock"><em>分类：</em>哲学、宗教</span>
+					<span><em>格式：</em>PDF</span>
+					<span><em>积分：</em>0</span>
+					
+					<span class="classify inlineBlock"><em>上传者：</em>刘春丽</span>
+					<span><em>上传时间：</em>2017-02-26</span>
+				</div>
+				<p title="&amp;quot;奥斯维辛&amp;quot;是现代人类灵魂深处一个重大的&amp;quot;精神事件&amp;quot;,它极大地影响了哲学的言说方式和存在方式,因而构成了考察和理解现代哲学转向的一个重要参照系.&amp;quot;形而上学的终结&amp;quot;、&amp;quot;道德合理性基础的危机与重建&amp;quot;、&amp;quot;社会统一性基础的寻求&amp;quot;等现代哲学中最为重大的课题,只有置于这一参照系中,才能获得真切的理解和深层的把握.现代哲学也正是在对这些重大课题的思考中,实现了从&amp;quot;终极知识&amp;quot;向&amp;quot;生存智慧&amp;quot;的重大转向."><em>摘要：</em>"奥斯维辛"是现代人类灵魂深处一个重大的"精神事件",它极大地影响了哲学的言说方式和存在方式,因而构成了考察和理解现代哲学转向的一个重要参照系."形而上学的终结&amp;qu...</p>
+			</div>
+		</li>
+		<li doc-id="1000014827665311">
+			<div class="tool" style="display: block">
+				<div class="collect" data-id="57302004">
+					<a title="收藏" class="collect" onclick="collect_result('57302004');" href="javascript:void(0);"><span class="icons inlineBlock"></span>收藏</a>
+				</div>
+				<!--<div class="share">
+					<a href="javascript:void(0);" class="share_link" title="分享"><span class="icons inlineBlock"></span>分享</a>
+<div class="inside_tk" style="display: none;">
+	<div class="tk_top"></div>
+	<div class="tk_mid">
+		<div class="share_tk">
+			<ul>
+				<li>
+					<a href="javascript:void(0);" onclick="XS.share.tencent({title : '审美膨胀与价值迷失--诉求日常生活审美化的"新美学"何以可能', url : 'https://www.ixueshu.com/document/c0e0ecc264e25c4b318947a18e7f9386.html', summary : '阐释&quot;新美学&quot;流行的语境及其出场的历史的现实的机缘,结合美学思想史对其作了剖析.大众文化语境中美的内涵及显现形态发生了转向,以所谓&quot;日常生活审美化&quot;成为当下社会运作的&quot;组织原则&quot;.就其精神风格而言,它是消费主义意识形态的修辞究其价值底蕴,这种新生成的美学受制于现代技术技术-审美的,它借助技术揭蔽的力量大肆流行.表面的审美膨胀掩饰着内在价值的迷失和&quot;乏力&quot;.'})">
+						<span class="icons inlineBlock share-1"></span>QQ
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" onclick="XS.share.weibo({appkey : '3154435690', title : '审美膨胀与价值迷失--诉求日常生活审美化的"新美学"何以可能', url : 'https://www.ixueshu.com/document/c0e0ecc264e25c4b318947a18e7f9386.html', summary : '阐释&quot;新美学&quot;流行的语境及其出场的历史的现实的机缘,结合美学思想史对其作了剖析.大众文化语境中美的内涵及显现形态发生了转向,以所谓&quot;日常生活审美化&quot;成为当下社会运作的&quot;组织原则&quot;.就其精神风格而言,它是消费主义意识形态的修辞究其价值底蕴,这种新生成的美学受制于现代技术技术-审美的,它借助技术揭蔽的力量大肆流行.表面的审美膨胀掩饰着内在价值的迷失和&quot;乏力&quot;.'})">
+						<span class="icons inlineBlock share-2"></span>新浪微博
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="tk_bot"></div>
+</div>				</div>-->
+			</div>
+			<div class="docPreview_img">
+				<a title="审美膨胀与价值迷失--诉求日常生活审美化的'新美学'何以可能" href="/document/c0e0ecc264e25c4b318947a18e7f9386.html" target="_blank">
+					<img width="100%" src="/cover/57302004.html"><span class="doc_page">P.7</span>
+				</a>
+			</div>
+			<div class="doc_intro">
+				<div class="doc_title">
+					<a title="审美膨胀与价值迷失--诉求日常生活审美化的'新美学'何以可能" class="title outRange" href="/document/c0e0ecc264e25c4b318947a18e7f9386.html" target="_blank">
+						<script>
+						</script>
+						<span class="icons inlineBlock pdf doc_type"></span>审美膨胀与价值迷失--诉求日常生活审美化的"新美学"何以可能
+					</a>
+				</div>
+				<div class="field">
+					<span title="哲学、宗教" class="classify inlineBlock"><em>分类：</em>哲学、宗教</span>
+					<span><em>格式：</em>PDF</span>
+					<span><em>积分：</em>0</span>
+					
+					<span class="classify inlineBlock"><em>上传者：</em>赵志群</span>
+					<span><em>上传时间：</em>2017-02-26</span>
+				</div>
+				<p title="阐释&amp;quot;新美学&amp;quot;流行的语境及其出场的历史的现实的机缘,结合美学思想史对其作了剖析.大众文化语境中美的内涵及显现形态发生了转向,以所谓&amp;quot;日常生活审美化&amp;quot;成为当下社会运作的&amp;quot;组织原则&amp;quot;.就其精神风格而言,它是消费主义意识形态的修辞究其价值底蕴,这种新生成的美学受制于现代技术技术-审美的,它借助技术揭蔽的力量大肆流行.表面的审美膨胀掩饰着内在价值的迷失和&amp;quot;乏力&amp;quot;."><em>摘要：</em>阐释"新美学"流行的语境及其出场的历史的现实的机缘,结合美学思想史对其作了剖析.大众文化语境中美的内涵及显现形态发生了转向,以所谓"日常生活审美化"成为当下社会运作的"...</p>
+			</div>
+		</li>
+		<li doc-id="1000014822700511">
+			<div class="tool" style="display: block">
+				<div class="collect" data-id="57301669">
+					<a title="收藏" class="collect" onclick="collect_result('57301669');" href="javascript:void(0);"><span class="icons inlineBlock"></span>收藏</a>
+				</div>
+				<!--<div class="share">
+					<a href="javascript:void(0);" class="share_link" title="分享"><span class="icons inlineBlock"></span>分享</a>
+<div class="inside_tk" style="display: none;">
+	<div class="tk_top"></div>
+	<div class="tk_mid">
+		<div class="share_tk">
+			<ul>
+				<li>
+					<a href="javascript:void(0);" onclick="XS.share.tencent({title : '从朗吉努斯的<论崇高>看屈原的<离骚>', url : 'https://www.ixueshu.com/document/e0573f6890e461e4318947a18e7f9386.html', summary : '西方美学一般把审美意识区分为优美与崇高两类.古罗马时代的希腊文艺理论家朗吉努斯在其名著&lt;论崇高&gt;中,早已勾勒了崇高之不同于优美的基本特征.本文作者受朗吉努斯著作的启发,对屈原的&lt;离骚&gt;作了细致的分析,认为&lt;离骚&gt;不是一般的优美所可以概括的,它所体现的是一种崇高之美.文章最后强调,崇高在西方源于希伯莱文化,以忧患意识为其思想根源.&lt;离骚&gt;的崇高与屈原所遭遇的忧患也有密切联系.作者希望我们今天能够多一点忧患意识.能在文坛上出现像&lt;离骚&gt;一样崇高宏伟的诗篇.'})">
+						<span class="icons inlineBlock share-1"></span>QQ
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" onclick="XS.share.weibo({appkey : '3154435690', title : '从朗吉努斯的<论崇高>看屈原的<离骚>', url : 'https://www.ixueshu.com/document/e0573f6890e461e4318947a18e7f9386.html', summary : '西方美学一般把审美意识区分为优美与崇高两类.古罗马时代的希腊文艺理论家朗吉努斯在其名著&lt;论崇高&gt;中,早已勾勒了崇高之不同于优美的基本特征.本文作者受朗吉努斯著作的启发,对屈原的&lt;离骚&gt;作了细致的分析,认为&lt;离骚&gt;不是一般的优美所可以概括的,它所体现的是一种崇高之美.文章最后强调,崇高在西方源于希伯莱文化,以忧患意识为其思想根源.&lt;离骚&gt;的崇高与屈原所遭遇的忧患也有密切联系.作者希望我们今天能够多一点忧患意识.能在文坛上出现像&lt;离骚&gt;一样崇高宏伟的诗篇.'})">
+						<span class="icons inlineBlock share-2"></span>新浪微博
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="tk_bot"></div>
+</div>				</div>-->
+			</div>
+			<div class="docPreview_img">
+				<a title="从朗吉努斯的<论崇高>看屈原的<离骚>" href="/document/e0573f6890e461e4318947a18e7f9386.html" target="_blank">
+					<img width="100%" src="/cover/57301669.html"><span class="doc_page">P.6</span>
+				</a>
+			</div>
+			<div class="doc_intro">
+				<div class="doc_title">
+					<a title="从朗吉努斯的<论崇高>看屈原的<离骚>" class="title outRange" href="/document/e0573f6890e461e4318947a18e7f9386.html" target="_blank">
+						<script>
+						</script>
+						<span class="icons inlineBlock pdf doc_type"></span>从朗吉努斯的&lt;论崇高&gt;看屈原的&lt;离骚&gt;
+					</a>
+				</div>
+				<div class="field">
+					<span title="哲学、宗教" class="classify inlineBlock"><em>分类：</em>哲学、宗教</span>
+					<span><em>格式：</em>PDF</span>
+					<span><em>积分：</em>0</span>
+					
+					<span class="classify inlineBlock"><em>上传者：</em>曹丽红</span>
+					<span><em>上传时间：</em>2017-02-26</span>
+				</div>
+				<p title="西方美学一般把审美意识区分为优美与崇高两类.古罗马时代的希腊文艺理论家朗吉努斯在其名著&amp;lt;论崇高&amp;gt;中,早已勾勒了崇高之不同于优美的基本特征.本文作者受朗吉努斯著作的启发,对屈原的&amp;lt;离骚&amp;gt;作了细致的分析,认为&amp;lt;离骚&amp;gt;不是一般的优美所可以概括的,它所体现的是一种崇高之美.文章最后强调,崇高在西方源于希伯莱文化,以忧患意识为其思想根源.&amp;lt;离骚&amp;gt;的崇高与屈原所遭遇的忧患也有密切联系.作者希望我们今天能够多一点忧患意识.能在文坛上出现像&amp;lt;离骚&amp;gt;一样崇高宏伟的诗篇."><em>摘要：</em>西方美学一般把审美意识区分为优美与崇高两类.古罗马时代的希腊文艺理论家朗吉努斯在其名著&lt;论崇高&gt;中,早已勾勒了崇高之不同于优美的基本特征.本文作者受朗吉努斯著作的启发,对屈原的&lt;离骚&gt;作了细致...</p>
+			</div>
+		</li>
+		<li doc-id="1000014818948911">
+			<div class="tool" style="display: block">
+				<div class="collect" data-id="57301582">
+					<a title="收藏" class="collect" onclick="collect_result('57301582');" href="javascript:void(0);"><span class="icons inlineBlock"></span>收藏</a>
+				</div>
+				<!--<div class="share">
+					<a href="javascript:void(0);" class="share_link" title="分享"><span class="icons inlineBlock"></span>分享</a>
+<div class="inside_tk" style="display: none;">
+	<div class="tk_top"></div>
+	<div class="tk_mid">
+		<div class="share_tk">
+			<ul>
+				<li>
+					<a href="javascript:void(0);" onclick="XS.share.tencent({title : '重申社会存在--马克思"巴黎手稿"中的"社会存在"范畴发微', url : 'https://www.ixueshu.com/document/0a7f9672fffe74dc318947a18e7f9386.html', summary : '文章有鉴于某些对于&quot;社会存在&quot;之总体性立场的背离现象,提出了重申关于社会存在的真理性认识的任务,认为&quot;巴黎手稿&quot;中关于社会存在范畴的基本思想是人的存在即人的现实生活过程本身,人的现实存在即是其社会存在人的属性或人的本质只能从人的社会存在得到证明人的自由本质与人的社会生活必是相须相即、同-不二的关系,人是在社会生活中确证自己的自由本质的.'})">
+						<span class="icons inlineBlock share-1"></span>QQ
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" onclick="XS.share.weibo({appkey : '3154435690', title : '重申社会存在--马克思"巴黎手稿"中的"社会存在"范畴发微', url : 'https://www.ixueshu.com/document/0a7f9672fffe74dc318947a18e7f9386.html', summary : '文章有鉴于某些对于&quot;社会存在&quot;之总体性立场的背离现象,提出了重申关于社会存在的真理性认识的任务,认为&quot;巴黎手稿&quot;中关于社会存在范畴的基本思想是人的存在即人的现实生活过程本身,人的现实存在即是其社会存在人的属性或人的本质只能从人的社会存在得到证明人的自由本质与人的社会生活必是相须相即、同-不二的关系,人是在社会生活中确证自己的自由本质的.'})">
+						<span class="icons inlineBlock share-2"></span>新浪微博
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="tk_bot"></div>
+</div>				</div>-->
+			</div>
+			<div class="docPreview_img">
+				<a title="重申社会存在--马克思'巴黎手稿'中的'社会存在'范畴发微" href="/document/0a7f9672fffe74dc318947a18e7f9386.html" target="_blank">
+					<img width="100%" src="/cover/57301582.html"><span class="doc_page">P.4</span>
+				</a>
+			</div>
+			<div class="doc_intro">
+				<div class="doc_title">
+					<a title="重申社会存在--马克思'巴黎手稿'中的'社会存在'范畴发微" class="title outRange" href="/document/0a7f9672fffe74dc318947a18e7f9386.html" target="_blank">
+						<script>
+						</script>
+						<span class="icons inlineBlock pdf doc_type"></span>重申社会存在--马克思"巴黎手稿"中的"社会存在"范畴发微
+					</a>
+				</div>
+				<div class="field">
+					<span title="哲学、宗教" class="classify inlineBlock"><em>分类：</em>哲学、宗教</span>
+					<span><em>格式：</em>PDF</span>
+					<span><em>积分：</em>0</span>
+					
+					<span class="classify inlineBlock"><em>上传者：</em>姜子豪</span>
+					<span><em>上传时间：</em>2017-02-26</span>
+				</div>
+				<p title="文章有鉴于某些对于&amp;quot;社会存在&amp;quot;之总体性立场的背离现象,提出了重申关于社会存在的真理性认识的任务,认为&amp;quot;巴黎手稿&amp;quot;中关于社会存在范畴的基本思想是人的存在即人的现实生活过程本身,人的现实存在即是其社会存在人的属性或人的本质只能从人的社会存在得到证明人的自由本质与人的社会生活必是相须相即、同-不二的关系,人是在社会生活中确证自己的自由本质的."><em>摘要：</em>文章有鉴于某些对于"社会存在"之总体性立场的背离现象,提出了重申关于社会存在的真理性认识的任务,认为"巴黎手稿"中关于社会存在范畴的基本思想是人的存在即人的现实生活过程本身,人...</p>
+			</div>
+		</li>
+		<li doc-id="1000014816195911">
+			<div class="tool" style="display: block">
+				<div class="collect" data-id="57301161">
+					<a title="收藏" class="collect" onclick="collect_result('57301161');" href="javascript:void(0);"><span class="icons inlineBlock"></span>收藏</a>
+				</div>
+				<!--<div class="share">
+					<a href="javascript:void(0);" class="share_link" title="分享"><span class="icons inlineBlock"></span>分享</a>
+<div class="inside_tk" style="display: none;">
+	<div class="tk_top"></div>
+	<div class="tk_mid">
+		<div class="share_tk">
+			<ul>
+				<li>
+					<a href="javascript:void(0);" onclick="XS.share.tencent({title : '对"斗争哲学"与"和谐哲学"的思考', url : 'https://www.ixueshu.com/document/2a3b34e182481bcd318947a18e7f9386.html', summary : '&quot;斗&quot;与&quot;和&quot;分别在事物的运动发展中发挥着各自的作用.&quot;斗争哲学&quot;与&quot;和谐哲学&quot;代表着两种不同的哲学倾向,分别适合于事物发展的不同阶段.历史经验表明,社会主义建设时期需要&quot;和谐哲学&quot;,&quot;斗争哲学&quot;如果僭越了其适用范围,会给社会主义建设事业造成极大的危害.在和谐社会的构建过程中,&quot;和谐哲学&quot;大有可为,但不能泛化.'})">
+						<span class="icons inlineBlock share-1"></span>QQ
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" onclick="XS.share.weibo({appkey : '3154435690', title : '对"斗争哲学"与"和谐哲学"的思考', url : 'https://www.ixueshu.com/document/2a3b34e182481bcd318947a18e7f9386.html', summary : '&quot;斗&quot;与&quot;和&quot;分别在事物的运动发展中发挥着各自的作用.&quot;斗争哲学&quot;与&quot;和谐哲学&quot;代表着两种不同的哲学倾向,分别适合于事物发展的不同阶段.历史经验表明,社会主义建设时期需要&quot;和谐哲学&quot;,&quot;斗争哲学&quot;如果僭越了其适用范围,会给社会主义建设事业造成极大的危害.在和谐社会的构建过程中,&quot;和谐哲学&quot;大有可为,但不能泛化.'})">
+						<span class="icons inlineBlock share-2"></span>新浪微博
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="tk_bot"></div>
+</div>				</div>-->
+			</div>
+			<div class="docPreview_img">
+				<a title="对'斗争哲学'与'和谐哲学'的思考" href="/document/2a3b34e182481bcd318947a18e7f9386.html" target="_blank">
+					<img width="100%" src="/cover/57301161.html"><span class="doc_page">P.4</span>
+				</a>
+			</div>
+			<div class="doc_intro">
+				<div class="doc_title">
+					<a title="对'斗争哲学'与'和谐哲学'的思考" class="title outRange" href="/document/2a3b34e182481bcd318947a18e7f9386.html" target="_blank">
+						<script>
+						</script>
+						<span class="icons inlineBlock pdf doc_type"></span>对"斗争哲学"与"和谐哲学"的思考
+					</a>
+				</div>
+				<div class="field">
+					<span title="哲学、宗教" class="classify inlineBlock"><em>分类：</em>哲学、宗教</span>
+					<span><em>格式：</em>PDF</span>
+					<span><em>积分：</em>0</span>
+					
+					<span class="classify inlineBlock"><em>上传者：</em>陈永进</span>
+					<span><em>上传时间：</em>2017-02-26</span>
+				</div>
+				<p title="&amp;quot;斗&amp;quot;与&amp;quot;和&amp;quot;分别在事物的运动发展中发挥着各自的作用.&amp;quot;斗争哲学&amp;quot;与&amp;quot;和谐哲学&amp;quot;代表着两种不同的哲学倾向,分别适合于事物发展的不同阶段.历史经验表明,社会主义建设时期需要&amp;quot;和谐哲学&amp;quot;,&amp;quot;斗争哲学&amp;quot;如果僭越了其适用范围,会给社会主义建设事业造成极大的危害.在和谐社会的构建过程中,&amp;quot;和谐哲学&amp;quot;大有可为,但不能泛化."><em>摘要：</em>"斗"与"和"分别在事物的运动发展中发挥着各自的作用."斗争哲学"与"和谐哲学"代表着两种不同的哲学倾向,分别适合于事物发展的不同阶段....</p>
+			</div>
+		</li>
+		<li doc-id="1000014823342211">
+			<div class="tool" style="display: block">
+				<div class="collect" data-id="57301026">
+					<a title="收藏" class="collect" onclick="collect_result('57301026');" href="javascript:void(0);"><span class="icons inlineBlock"></span>收藏</a>
+				</div>
+				<!--<div class="share">
+					<a href="javascript:void(0);" class="share_link" title="分享"><span class="icons inlineBlock"></span>分享</a>
+<div class="inside_tk" style="display: none;">
+	<div class="tk_top"></div>
+	<div class="tk_mid">
+		<div class="share_tk">
+			<ul>
+				<li>
+					<a href="javascript:void(0);" onclick="XS.share.tencent({title : '辩证唯物主义世界观只会被发展而不会被消解', url : 'https://www.ixueshu.com/document/47321dbbb6177cd8318947a18e7f9386.html', summary : '世纪之交,马克思主义哲学的前途命运受到学术界的广泛关注.在贯彻双百方针和开展学术研究的过程中,出现了否定辩证唯物主义和历史唯物主义,特别是否定辩证唯物主义世界观的种种错误观点,针对这些观点的立论根据,作者从哲学史、特别是哲学分化的历史方面进行了反驳论证了马克思主义哲学--辩证唯物主义世界观的科学性认为要将研究最大的整体、最普遍的东西、最根本的东西的哲学本身本体论或世界观,与研究某一领域的最完整的东西、最根本的东西的部门哲学区分开来探讨了在当前形势下,既捍卫马克思主义哲学的基本观点,又建构与当代社会发展水平相适应的有中国特色的马克思主义哲学新形态的问题.'})">
+						<span class="icons inlineBlock share-1"></span>QQ
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" onclick="XS.share.weibo({appkey : '3154435690', title : '辩证唯物主义世界观只会被发展而不会被消解', url : 'https://www.ixueshu.com/document/47321dbbb6177cd8318947a18e7f9386.html', summary : '世纪之交,马克思主义哲学的前途命运受到学术界的广泛关注.在贯彻双百方针和开展学术研究的过程中,出现了否定辩证唯物主义和历史唯物主义,特别是否定辩证唯物主义世界观的种种错误观点,针对这些观点的立论根据,作者从哲学史、特别是哲学分化的历史方面进行了反驳论证了马克思主义哲学--辩证唯物主义世界观的科学性认为要将研究最大的整体、最普遍的东西、最根本的东西的哲学本身本体论或世界观,与研究某一领域的最完整的东西、最根本的东西的部门哲学区分开来探讨了在当前形势下,既捍卫马克思主义哲学的基本观点,又建构与当代社会发展水平相适应的有中国特色的马克思主义哲学新形态的问题.'})">
+						<span class="icons inlineBlock share-2"></span>新浪微博
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="tk_bot"></div>
+</div>				</div>-->
+			</div>
+			<div class="docPreview_img">
+				<a title="辩证唯物主义世界观只会被发展而不会被消解" href="/document/47321dbbb6177cd8318947a18e7f9386.html" target="_blank">
+					<img width="100%" src="/cover/57301026.html"><span class="doc_page">P.8</span>
+				</a>
+			</div>
+			<div class="doc_intro">
+				<div class="doc_title">
+					<a title="辩证唯物主义世界观只会被发展而不会被消解" class="title outRange" href="/document/47321dbbb6177cd8318947a18e7f9386.html" target="_blank">
+						<script>
+						</script>
+						<span class="icons inlineBlock pdf doc_type"></span>辩证唯物主义世界观只会被发展而不会被消解
+					</a>
+				</div>
+				<div class="field">
+					<span title="哲学、宗教" class="classify inlineBlock"><em>分类：</em>哲学、宗教</span>
+					<span><em>格式：</em>PDF</span>
+					<span><em>积分：</em>0</span>
+					
+					<span class="classify inlineBlock"><em>上传者：</em>宫官</span>
+					<span><em>上传时间：</em>2017-02-26</span>
+				</div>
+				<p title="世纪之交,马克思主义哲学的前途命运受到学术界的广泛关注.在贯彻双百方针和开展学术研究的过程中,出现了否定辩证唯物主义和历史唯物主义,特别是否定辩证唯物主义世界观的种种错误观点,针对这些观点的立论根据,作者从哲学史、特别是哲学分化的历史方面进行了反驳论证了马克思主义哲学--辩证唯物主义世界观的科学性认为要将研究最大的整体、最普遍的东西、最根本的东西的哲学本身本体论或世界观,与研究某一领域的最完整的东西、最根本的东西的部门哲学区分开来探讨了在当前形势下,既捍卫马克思主义哲学的基本观点,又建构与当代社会发展水平相适应的有中国特色的马克思主义哲学新形态的问题."><em>摘要：</em>世纪之交,马克思主义哲学的前途命运受到学术界的广泛关注.在贯彻双百方针和开展学术研究的过程中,出现了否定辩证唯物主义和历史唯物主义,特别是否定辩证唯物主义世界观的种种错误观点,针对这些观点的立论根据,作者从哲学史、特...</p>
+			</div>
+		</li>
+		<li doc-id="1000014824909711">
+			<div class="tool" style="display: block">
+				<div class="collect" data-id="57300236">
+					<a title="收藏" class="collect" onclick="collect_result('57300236');" href="javascript:void(0);"><span class="icons inlineBlock"></span>收藏</a>
+				</div>
+				<!--<div class="share">
+					<a href="javascript:void(0);" class="share_link" title="分享"><span class="icons inlineBlock"></span>分享</a>
+<div class="inside_tk" style="display: none;">
+	<div class="tk_top"></div>
+	<div class="tk_mid">
+		<div class="share_tk">
+			<ul>
+				<li>
+					<a href="javascript:void(0);" onclick="XS.share.tencent({title : '科学"乃儒流实事求是之学"--略论阮元科学思想的实学精神及其局限', url : 'https://www.ixueshu.com/document/083ddbd19af4e084318947a18e7f9386.html', summary : '阮元在科学技术问题上并不是&quot;以古为是&quot;,也不是埋头于故纸堆而不躬身实践、不问世事,他坚持&quot;实事求是&quot;、强调&quot;实测而知&quot;、力行&quot;实践之道&quot;、重视&quot;实用之事&quot;,充分体现了他的实学精神.然而他力主&quot;西学中源&quot;说,未能实事求是地认识、评价西方的科学技术,对当时和后世产生了很深的影响,这使得他的实学精神大打折扣.'})">
+						<span class="icons inlineBlock share-1"></span>QQ
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" onclick="XS.share.weibo({appkey : '3154435690', title : '科学"乃儒流实事求是之学"--略论阮元科学思想的实学精神及其局限', url : 'https://www.ixueshu.com/document/083ddbd19af4e084318947a18e7f9386.html', summary : '阮元在科学技术问题上并不是&quot;以古为是&quot;,也不是埋头于故纸堆而不躬身实践、不问世事,他坚持&quot;实事求是&quot;、强调&quot;实测而知&quot;、力行&quot;实践之道&quot;、重视&quot;实用之事&quot;,充分体现了他的实学精神.然而他力主&quot;西学中源&quot;说,未能实事求是地认识、评价西方的科学技术,对当时和后世产生了很深的影响,这使得他的实学精神大打折扣.'})">
+						<span class="icons inlineBlock share-2"></span>新浪微博
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="tk_bot"></div>
+</div>				</div>-->
+			</div>
+			<div class="docPreview_img">
+				<a title="科学'乃儒流实事求是之学'--略论阮元科学思想的实学精神及其局限" href="/document/083ddbd19af4e084318947a18e7f9386.html" target="_blank">
+					<img width="100%" src="/cover/57300236.html"><span class="doc_page">P.8</span>
+				</a>
+			</div>
+			<div class="doc_intro">
+				<div class="doc_title">
+					<a title="科学'乃儒流实事求是之学'--略论阮元科学思想的实学精神及其局限" class="title outRange" href="/document/083ddbd19af4e084318947a18e7f9386.html" target="_blank">
+						<script>
+						</script>
+						<span class="icons inlineBlock pdf doc_type"></span>科学"乃儒流实事求是之学"--略论阮元科学思想的实学精神及其局限
+					</a>
+				</div>
+				<div class="field">
+					<span title="哲学、宗教" class="classify inlineBlock"><em>分类：</em>哲学、宗教</span>
+					<span><em>格式：</em>PDF</span>
+					<span><em>积分：</em>0</span>
+					
+					<span class="classify inlineBlock"><em>上传者：</em>郑毅</span>
+					<span><em>上传时间：</em>2017-02-26</span>
+				</div>
+				<p title="阮元在科学技术问题上并不是&amp;quot;以古为是&amp;quot;,也不是埋头于故纸堆而不躬身实践、不问世事,他坚持&amp;quot;实事求是&amp;quot;、强调&amp;quot;实测而知&amp;quot;、力行&amp;quot;实践之道&amp;quot;、重视&amp;quot;实用之事&amp;quot;,充分体现了他的实学精神.然而他力主&amp;quot;西学中源&amp;quot;说,未能实事求是地认识、评价西方的科学技术,对当时和后世产生了很深的影响,这使得他的实学精神大打折扣."><em>摘要：</em>阮元在科学技术问题上并不是"以古为是",也不是埋头于故纸堆而不躬身实践、不问世事,他坚持"实事求是"、强调"实测而知"、力行"实践之道"...</p>
+			</div>
+		</li>
+	</ul>
+<div class="page">
+		<!--a href="javascript:void(0)" class="pageIc firstP"></a-->
+	<a href="javascript:void(0)">上一页</a>
+			<a class="on" href="javascript:void(0)">1</a>
+			<a href="/clc/2.html?page=2">2</a>	
+			<a href="/clc/2.html?page=3">3</a>	
+			<a href="/clc/2.html?page=4">4</a>	
+			<a href="/clc/2.html?page=5">5</a>	
+			<a href="/clc/2.html?page=6">6</a>	
+			<a href="/clc/2.html?page=7">7</a>	
+			<a href="/clc/2.html?page=8">8</a>	
+			<a href="/clc/2.html?page=9">9</a>	
+			<a href="/clc/2.html?page=10">10</a>	
+	<a href="/clc/2.html?page=2">下一页</a>
+	<!--a href="/clc/2.html?page=181445" class="pageIc lastP"></a-->
+	<input class="pageText inlineBlock bdrs3" type="text" value="1">
+	<a class="pageBtn inlineBlock bdrs3" id="jump" href="javascript:;">跳转</a>
+	<script>
+		$(function(){
+			$("#jump").click(function(){
+				var _this = $(this);
+				var _input = _this.prev().val();
+				_input = $.trim(_input);
+				if(_input == ""){
+					XS.alert("请输入浏览页数");
+					return;
+				}
+				if(isNaN(_input)){
+					XS.alert("请输入正确页数");
+					return;
+				}
+				var _url = "/clc/2.html?page=2".replace("page=2","page=" + _input);
+				location.href = _url;
+			});
+			$(".page .pageText").keydown(function(event){
+				if(event.keyCode == "13"){
+					$("#jump").click();
+				}  
+			});
+		});
+	</script>
+</div></div>
+<script type="text/javascript">
+	var collect_result = function (id) {
+        if(!id){
+            XS.alert('请选择所需收藏文献');
+            return;
+        }
+        XS.ajax('/my/collect/add.html',"ids=" + id, function(res){
+			$("[data-id='"+id+"']").html('<a class="collect_on"><span class="icons inlineBlock"></span>已收藏</a>');
+		});
+    }
+	$(".bulkD_btn_2").click(function(){
+		var docids = "";
+		$(".document_list > ul > li").each(function(){
+			var doc_id = $(this).attr("doc-id");
+			if(doc_id != ""){
+				docids += doc_id + ";";
+			}
+		});
+		if (docids == "") {
+			return;
+		}
+		docids = "docids=" + docids;
+		docids = docids.substring(0, docids.length - 1);
+		XS.pack.check(null,docids);
+	});
+</script>		</div>
+			</div>
+    </div>
+    <div id="menu3" class="container tab-pane fade"><br>
+      <div class="search-main">
+		<div class="search-header">
+			<div class="search-form">
+				<i class="icon-search sz-search"></i>
+				<input class="search-form-ipt js-search-ipt" type="text" placeholder="请输入想搜索的内容" value="maven">
+				<button class="search-form-btn js-search-btn">搜索</button>
+				<div class="search-history-area js-search-history" style="display: none;">
+				</div>
+			</div>
+
+			<ul class="search-hot">
+                <li class="fli">热搜关键词：</li>
+									<li><a href="/search/course?words=React.js&amp;type=sz" target="_blank">React.js</a></li>
+									<li><a href="/search/course?words=面试&amp;type=sz" target="_blank">面试</a></li>
+									<li><a href="/search/course?words=算法&amp;type=sz" target="_blank">算法</a></li>
+									<li><a href="/search/course?words=Vue.js&amp;type=sz" target="_blank">Vue.js</a></li>
+									<li><a href="/search/course?words=Python&amp;type=sz" target="_blank">Python</a></li>
+									<li><a href="/search/course?words=人工智能&amp;type=sz" target="_blank">人工智能</a></li>
+									<li><a href="/search/course?words=GO语言&amp;type=sz" target="_blank">GO语言</a></li>
+									<li><a href="/search/course?words=小程序&amp;type=sz" target="_blank">小程序</a></li>
+							</ul>
+		</div>
+		<div class="search-body">
+			<div class="search-content">
+				<div class="search-classify clearfix">
+					<ul class="search-classify-list clearfix">
+						<li><a class="active" href="javascript:;" data-page="index">全站</a></li>
+						<li><a href="javascript:;" data-page="course">课程</a></li>
+						<li><a href="javascript:;" data-page="wenda">猿问</a></li>
+						<li><a href="javascript:;" data-page="article">手记</a></li>
+					</ul>
+					
+	<span class="search-related">共找到 1486 个相关内容</span>
+
+					
+				</div>
+				
+    
+
+    <!-- 搜索人员 老师||用户 -->
+	
+    
+			
+	<div class="course-item">
+									<a class="course-detail-title" href="//coding.imooc.com/class/201.html" target="_blank">
+					<img class="course-item-img" src="//szimg.mukewang.com/5ab9be440001b21f05400300-360-202.jpg">
+				</a>
+			
+		
+		<div class="course-item-detail">
+									<a class="course-detail-title" href="//coding.imooc.com/class/201.html" target="_blank">
+					ZooKeeper分布式专题与Dubbo微服务入门
+				</a>
+				<div class="course-item-classify">
+					<span>实战</span>
+                    					<span>讲师：
+                                                    <a class="course-tname" href="/u/3078817" target="_blank">风间影月</a>
+                                            </span>
+                    					<span>
+													中级
+											</span>
+					<i class="course-study-number icon-set_sns"></i><span>772</span>
+				</div>
+					<p>进阶中高级工程师了解分布式的必备技能，大数据与微服务最常用的中间件</p>
+
+				</div>
+	</div>
+	<div class="course-item">
+									<a class="course-detail-title" href="//coding.imooc.com/class/144.html" target="_blank">
+					<img class="course-item-img" src="//szimg.mukewang.com/59c9b245000143ae05400300-360-202.jpg">
+				</a>
+			
+		
+		<div class="course-item-detail">
+									<a class="course-detail-title" href="//coding.imooc.com/class/144.html" target="_blank">
+					毕设项目 SSM到Spring Boot 从零开发校园商铺平台
+				</a>
+				<div class="course-item-classify">
+					<span>实战</span>
+                    					<span>讲师：
+                                                    <a class="course-tname" href="/u/4264265" target="_blank">xiangzepro</a>
+                                            </span>
+                    					<span>
+													初级
+											</span>
+					<i class="course-study-number icon-set_sns"></i><span>1335</span>
+				</div>
+					<p>【毕设利器】SSM到Spring Boot开发及转换/阿里云部署和远程调试/完整前后端开发</p>
+
+				</div>
+	</div>
+	<div class="course-item">
+									<a class="course-detail-title" href="//coding.imooc.com/class/142.html" target="_blank">
+					<img class="course-item-img" src="//szimg.mukewang.com/59c0f06e0001150805400300-360-202.jpg">
+				</a>
+			
+		
+		<div class="course-item-detail">
+									<a class="course-detail-title" href="//coding.imooc.com/class/142.html" target="_blank">
+					JMeter 深入进阶性能测试体系 各领域企业实战
+				</a>
+				<div class="course-item-classify">
+					<span>实战</span>
+                    					<span>讲师：
+                                                    <a class="course-tname" href="/u/4172751" target="_blank">大周16</a>
+                                            </span>
+                    					<span>
+													中级
+											</span>
+					<i class="course-study-number icon-set_sns"></i><span>532</span>
+				</div>
+					<p>精选接口，数据库，服务器，大数据等领域的性能测试，带你从认知到实际工作的应用</p>
+
+				</div>
+	</div>
+	<div class="course-item">
+									<a class="course-detail-title" href="/view/443" target="_blank">
+					<img src="//img1.sycdn.imooc.com/5704cfa900015c2406000338-240-135.jpg" target="_blank">
+				</a>
+			
+		
+		<div class="course-item-detail">
+									<a class="course-detail-title" href="/view/443" target="_blank">
+					项目管理利器——<span class="highlight">maven</span>
+				</a>
+				<div class="course-item-classify">
+					<span>课程</span>
+                    					<span>讲师：
+                                                    <a class="course-tname" href="/u/1198744" target="_blank">Eleven_Lee</a>
+                                            </span>
+                    					<span>
+													初级
+											</span>
+					<i class="course-study-number icon-set_sns"></i><span>144751</span>
+				</div>
+					<p>使用<span class="highlight">maven</span>来构建和管理Java项目，从环境配置，到<span class="highlight">maven</span>核心知识</p>
+
+				</div>
+	</div>
+	<div class="course-item">
+									<a class="course-detail-title" href="/view/47" target="_blank">
+					<img src="//img1.sycdn.imooc.com/570765d90001bf1406000338-240-135.jpg" target="_blank">
+				</a>
+			
+		
+		<div class="course-item-detail">
+									<a class="course-detail-title" href="/view/47" target="_blank">
+					Spring MVC起步
+				</a>
+				<div class="course-item-classify">
+					<span>课程</span>
+                    					<span>讲师：
+                                                    <a class="course-tname" href="/u/223022" target="_blank">Arthur</a>
+                                            </span>
+                    					<span>
+													中级
+											</span>
+					<i class="course-study-number icon-set_sns"></i><span>163718</span>
+				</div>
+					<p>配置<span class="highlight">Maven</span>环境</p>
+
+				</div>
+	</div>
+			
+			
+    <div class="wenda-item">
+                    <div class="wenda-item-detail">
+                                                                    <div class="wenda-detail-wrap">
+                                        
+                                        <p class="wenda-detail-title">
+                        <a href="/qadetail/254445" target="_blank"><span class="highlight">Maven</span></a>
+                    </p>
+                                        <span class="wenda-answer-total">共4个回答</span>
+                                            <div class="wenda-answer-wrap">
+                                                        
+                            <a class="wenda-answer-name" href="//www.imooc.com/u/3333214/bbs" target="_blank">
+                                一只升级打怪的千年萝卜精                            </a>
+                            
+                            <span class="wenda-answer">回答</span>
+                            <p class="wenda-answer-content">&lt;p&gt;环境搭建&lt;/p&gt;&lt;ol class="list-paddingleft-2"&gt;&lt;li&gt;&lt;p&gt;下载安装：&lt;/p&gt;&lt;p&gt;maven.apache.orp(网址)&lt;/p&gt;&lt;p&gt;Download（左侧边栏）&lt;/p&gt;&lt;p&gt;Maven 3.3.3 &nbsp;	a...</p>
+                        </div>
+                                    </div>
+            </div>
+            </div>
+    <div class="wenda-item">
+                    <div class="wenda-item-detail">
+                                                                    <div class="wenda-detail-wrap">
+                                        
+                                        <p class="wenda-detail-title">
+                        <a href="/qadetail/140119" target="_blank"><span class="highlight">maven</span></a>
+                    </p>
+                                        <span class="wenda-answer-total">共4个回答</span>
+                                            <div class="wenda-answer-wrap">
+                                                        
+                            <a class="wenda-answer-name" href="//www.imooc.com/u/2977412/bbs" target="_blank">
+                                wy18030845370                            </a>
+                            
+                            <span class="wenda-answer">回答</span>
+                            <p class="wenda-answer-content">&lt;p&gt;[WARNING] Error injecting: org.apache.maven.DefaultMaven&lt;/p&gt;&lt;p&gt;java.lang.NoClassDefFoundError: org/apache/maven/model/building/Result&lt;/p&gt;&lt;p&gt;报这个错是什么意思啊&lt;/p&gt;&lt;p&amp;g...</p>
+                        </div>
+                                    </div>
+            </div>
+            </div>
+    <div class="wenda-item">
+                    <div class="wenda-item-detail">
+                                                                    <div class="wenda-detail-wrap">
+                                        
+                                        <p class="wenda-detail-title">
+                        <a href="/qadetail/145266" target="_blank"><span class="highlight">maven</span></a>
+                    </p>
+                                        <span class="wenda-answer-total">共1个回答</span>
+                                            <div class="wenda-answer-wrap">
+                                                        
+                            <a class="wenda-answer-name" href="//www.imooc.com/u/2359794/bbs" target="_blank">
+                                qq_45度仰望的压顶砖_0                            </a>
+                            
+                            <span class="wenda-answer">回答</span>
+                            <p class="wenda-answer-content">&lt;p&gt;再次对照视频确定环境变量是否设置正确&lt;/p&gt;</p>
+                        </div>
+                                    </div>
+            </div>
+            </div>
+    <div class="wenda-item">
+                    <div class="wenda-item-detail">
+                                                                    <div class="wenda-detail-wrap">
+                                        
+                                        <p class="wenda-detail-title">
+                        <a href="/qadetail/200474" target="_blank"><span class="highlight">maven</span></a>
+                    </p>
+                                        <span class="wenda-answer-total">共1个回答</span>
+                                            <div class="wenda-answer-wrap">
+                                                        
+                            <a class="wenda-answer-name" href="//www.imooc.com/u/2491726/bbs" target="_blank">
+                                zhonghang2058                            </a>
+                            
+                            <span class="wenda-answer">回答</span>
+                            <p class="wenda-answer-content">&lt;p&gt;没有更改端口号的话，地址是&nbsp; http://localhost:8080&lt;br /&gt;&lt;/p&gt;</p>
+                        </div>
+                                    </div>
+            </div>
+            </div>
+    <div class="wenda-item">
+                    <div class="wenda-item-detail">
+                                          <!-- 寻找下标为0的项 -->
+                    <img class="wenda-sign" src="//img1.sycdn.imooc.com/59e9700900012e3602400240-100-100.jpg">
+                                                    <div class="wenda-detail-wrap">
+                                            <span class="wenda-detail-top">来自</span>
+                                                    <span class="wenda-detail-top">JAVA</span>
+                                                                
+                                        <p class="wenda-detail-title">
+                        <a href="/wenda/detail/306705" target="_blank"><span class="highlight">maven</span></a>
+                    </p>
+                                        <span class="wenda-answer-total">共1个回答</span>
+                                            <div class="wenda-answer-wrap">
+                                                        
+                            <a class="wenda-answer-name" href="//www.imooc.com/u/1162249/bbs" target="_blank">
+                                堂堂堂堂糖糖糖童鞋                            </a>
+                            
+                            <span class="wenda-answer">回答</span>
+                            <p class="wenda-answer-content">首先是坐标：可以看一下这篇文章Maven坐标，我说下我的理解：groupId:&lt;...code...&gt;artifactId：&lt;...code...&gt;version：当前项目所处的版本，升级系统之后，...</p>
+                        </div>
+                                    </div>
+            </div>
+            </div>
+    <div class="wenda-item">
+                    <div class="wenda-item-detail">
+                                          <!-- 寻找下标为0的项 -->
+                    <img class="wenda-sign" src="//img1.sycdn.imooc.com/59e9700900012e3602400240-100-100.jpg">
+                                                    <div class="wenda-detail-wrap">
+                                            <span class="wenda-detail-top">来自</span>
+                                                    <span class="wenda-detail-top">JAVA</span>
+                                                                
+                                        <p class="wenda-detail-title">
+                        <a href="/wenda/detail/229117" target="_blank"><span class="highlight">maven</span></a>
+                    </p>
+                                        <span class="wenda-answer-total">共13个回答</span>
+                                            <div class="wenda-answer-wrap">
+                                                        
+                            <a class="wenda-answer-name" href="//www.imooc.com/u/1380250/bbs" target="_blank">
+                                shuang1562                            </a>
+                            
+                            <span class="wenda-answer">回答</span>
+                            <p class="wenda-answer-content">我也想学maven。求一个maven课程</p>
+                        </div>
+                                    </div>
+            </div>
+            </div>
+    <div class="wenda-item">
+                    <div class="wenda-item-detail">
+                                          <!-- 寻找下标为0的项 -->
+                    <img class="wenda-sign" src="//img1.sycdn.imooc.com/59e9700900012e3602400240-100-100.jpg">
+                                                    <div class="wenda-detail-wrap">
+                                            <span class="wenda-detail-top">来自</span>
+                                                    <span class="wenda-detail-top">JAVA</span>
+                                                                
+                                        <p class="wenda-detail-title">
+                        <a href="/wenda/detail/215095" target="_blank"><span class="highlight">maven</span></a>
+                    </p>
+                                        <span class="wenda-answer-total">共2个回答</span>
+                                            <div class="wenda-answer-wrap">
+                                                        
+                            <a class="wenda-answer-name" href="//www.imooc.com/u/1195019/bbs" target="_blank">
+                                qq_lls_0                            </a>
+                            
+                            <span class="wenda-answer">回答</span>
+                            <p class="wenda-answer-content">孔浩有maven的视频</p>
+                        </div>
+                                    </div>
+            </div>
+            </div>
+    <div class="wenda-item">
+                    <div class="wenda-item-detail">
+                                                                    <div class="wenda-detail-wrap">
+                                        
+                                        <p class="wenda-detail-title">
+                        <a href="/qadetail/119364" target="_blank"><span class="highlight">maven</span></a>
+                    </p>
+                                        <span class="wenda-answer-total">共2个回答</span>
+                                            <div class="wenda-answer-wrap">
+                                                        
+                            <a class="wenda-answer-name" href="//www.imooc.com/u/2835649/bbs" target="_blank">
+                                田小树                            </a>
+                            
+                            <span class="wenda-answer">回答</span>
+                            <p class="wenda-answer-content">&lt;p&gt;创建成功了，谢谢老师！&lt;/p&gt;</p>
+                        </div>
+                                    </div>
+            </div>
+            </div>
+    <div class="wenda-item">
+                    <div class="wenda-item-detail">
+                                                                    <div class="wenda-detail-wrap">
+                                        
+                                        <p class="wenda-detail-title">
+                        <a href="/qadetail/209925" target="_blank"><span class="highlight">maven</span> jdk1.8</a>
+                    </p>
+                                        <span class="wenda-answer-total">共1个回答</span>
+                                            <div class="wenda-answer-wrap">
+                                                        
+                            <a class="wenda-answer-name" href="//www.imooc.com/u/1037481/bbs" target="_blank">
+                                Lawrence_0006                            </a>
+                            
+                            <span class="wenda-answer">回答</span>
+                            <p class="wenda-answer-content">&lt;p&gt;背景：本项目使用JDK1.8&lt;/p&gt;&lt;p&gt;编译maven工程的时候出现如下错误：&lt;/p&gt;&lt;p&gt;Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1&lt;br /&gt;&lt;/p&gt;&lt;p&gt;pom中如下配置maven插件，...</p>
+                        </div>
+                                    </div>
+            </div>
+            </div>
+    <div class="wenda-item">
+                    <div class="wenda-item-detail">
+                                                                    <div class="wenda-detail-wrap">
+                                        
+                                        <p class="wenda-detail-title">
+                        <a href="/qadetail/256646" target="_blank"><span class="highlight">maven</span>运行</a>
+                    </p>
+                                        <span class="wenda-answer-total">共2个回答</span>
+                                            <div class="wenda-answer-wrap">
+                                                        
+                            <a class="wenda-answer-name" href="//www.imooc.com/u/5244679/bbs" target="_blank">
+                                黄月初                            </a>
+                            
+                            <span class="wenda-answer">回答</span>
+                            <p class="wenda-answer-content">&lt;p&gt;慕课网里有Maven环境变量安装 搜索 《代理的秘密》 &nbsp; 就有 望采纳&lt;/p&gt;</p>
+                        </div>
+                                    </div>
+            </div>
+            </div>
+					<a class="search-remind" href="/search/wenda?words=maven"><div>更多猿问搜索结果</div></a>
+			
+			
+<div class="article-item ">
+    
+        <a class="article-item-l" href="/article/44823" target="_blank">
+        <img src="//img1.sycdn.imooc.com/5b5057be0001a24704200279.jpg">
+	</a>
+        
+    <div class="article-item-c">
+        <a class="article-title" href="/article/44823" target="_blank">linux安装<span class="highlight">maven</span></a>
+        <div class="article-item-desc">
+                            <span class="highlight">maven</span>之前本地就有，直接上传到了服务器上，我使用的是<span class="highlight">maven</span>-3.5.3从本地上传mavenscp&nbsp;/Users/dalaoyang/downloads/apache-<span class="highlight">maven</span>-3.5.3-bin.tar.gz&nbsp;root@47.98.***.***:/usr/local/<span class="highlight">maven</span>/apache-<span class="highlight">maven</span>-3.5.3-bin.tar.gz到服务器上解压
+                    </div>
+        
+        <div class="article-item-footer">
+        
+                        
+			            
+            			<span class="article-author article-create-time">
+				2018-07-19
+			</span>
+                        
+                        
+                        
+            
+            <a class="imv2-arrow3_r article-arrow" href="/article/44823" target="_blank"></a>   
+            <span class="article-view_num">
+				浏览 9			</span>
+            
+        </div>
+    </div>
+</div>
+<div class="article-item maxitemc">
+    
+        
+    <div class="article-item-c">
+        <a class="article-title" href="/article/5803" target="_blank">ubuntu下安装<span class="highlight">maven</span></a>
+        <div class="article-item-desc">
+                            一、环境 ubuntu-14.04-desktop-amd64-64系统 二、安装步骤 1.首先要检查jdk的安装情况，因为<span class="highlight">maven</span>依赖于jdk $ echo $JAVA_HOME $ java –version 2.下载解压配置 首先到apache <span class="highlight">maven</span>官网下载apache-<span class="highlight">maven</span>-3.2.1-bin.tar.gz $ tar –zxvf apache-<span class="highlight">maven</span>-3.2.1-bin.tar.gz –C /app $ cd /app $ mv a
+                    </div>
+        
+        <div class="article-item-footer">
+        
+                        
+			            
+            			<span class="article-author article-create-time">
+				2016-03-23
+			</span>
+                        
+            			<span class="article-author">
+				推荐 2
+			</span>
+                        
+                        
+            
+            <a class="imv2-arrow3_r article-arrow" href="/article/5803" target="_blank"></a>   
+            <span class="article-view_num">
+				浏览 2140			</span>
+            
+        </div>
+    </div>
+</div>
+<div class="article-item ">
+    
+        <a class="article-item-l" href="/article/71025" target="_blank">
+        <img src="//img1.sycdn.imooc.com/5b80bf890001cc6a05080205.jpg">
+	</a>
+        
+    <div class="article-item-c">
+        <a class="article-title" href="/article/71025" target="_blank"><span class="highlight">maven</span>-仓库</a>
+        <div class="article-item-desc">
+                            1、<span class="highlight">maven</span>仓库在<span class="highlight">Maven</span>的世界里，任何一个依赖、插件、项目构建的输出，都可以成为一个构件。如&nbsp; log4j-1.2.15.jar依赖是一个构件，<span class="highlight">maven</span>-compile-pligin-2.0.2.jar插件是一个构件，myapp项目构建完后输出myapp-1.0-SNAPSHOT.war也是一个构件。<span class="highlight">Maven</span>在某个位置存储所有<span class="highlight">maven</span>项目共享的构件，这个位置就称为仓库。每一
+                    </div>
+        
+        <div class="article-item-footer">
+        
+                        
+			            
+            			<span class="article-author article-create-time">
+				4天前
+			</span>
+                        
+                        
+                        
+            
+            <a class="imv2-arrow3_r article-arrow" href="/article/71025" target="_blank"></a>   
+            <span class="article-view_num">
+				浏览 2			</span>
+            
+        </div>
+    </div>
+</div>
+<div class="article-item maxitemc">
+    
+        
+    <div class="article-item-c">
+        <a class="article-title" href="/article/22013" target="_blank">【<span class="highlight">maven</span>】enforcer插件</a>
+        <div class="article-item-desc">
+                            参考资料： 【enforcer首页】http://maven.apache.org/enforcer/<span class="highlight">maven</span>-enforcer-plugin/enforce-mojo.html 【内置规则】http://maven.apache.org/enforcer/enforcer-rules/index.html 【codehaus扩展规则】http://www.mojohaus.org/extra
+                    </div>
+        
+        <div class="article-item-footer">
+        
+                        
+			            
+            			<span class="article-author article-create-time">
+				2017-12-13
+			</span>
+                        
+            			<span class="article-author">
+				推荐 1
+			</span>
+                        
+                        
+            
+            <a class="imv2-arrow3_r article-arrow" href="/article/22013" target="_blank"></a>   
+            <span class="article-view_num">
+				浏览 334			</span>
+            
+        </div>
+    </div>
+</div>
+<div class="article-item maxitemc">
+    
+        
+    <div class="article-item-c">
+        <a class="article-title" href="/article/17638" target="_blank">使用<span class="highlight">Maven</span>整合SSH总结</a>
+        <div class="article-item-desc">
+                            项目环境： struts-2.3.31 + spring-4.3.7 + hibernate-4.2.21 + <span class="highlight">maven</span>-3.3.9 + mysql5.7 在之前一篇手记做了改进，主要是引入了<span class="highlight">maven</span>： pom.xml： &lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http
+                    </div>
+        
+        <div class="article-item-footer">
+        
+                        
+			            
+            			<span class="article-author article-create-time">
+				2017-04-20
+			</span>
+                        
+            			<span class="article-author">
+				推荐 7
+			</span>
+                        
+                        
+            
+            <a class="imv2-arrow3_r article-arrow" href="/article/17638" target="_blank"></a>   
+            <span class="article-view_num">
+				浏览 2188			</span>
+            
+        </div>
+    </div>
+</div>
+<div class="article-item ">
+    
+        <a class="article-item-l" href="/article/25266" target="_blank">
+        <img src="//img1.sycdn.imooc.com/5aca3a7900012b2e16000900.jpg">
+	</a>
+        
+    <div class="article-item-c">
+        <a class="article-title" href="/article/25266" target="_blank"><span class="highlight">Maven</span>就是这么简单</a>
+        <div class="article-item-desc">
+                            tags: <span class="highlight">Maven</span> 什么是<span class="highlight">Maven</span> <span class="highlight">Maven</span>是一个采用纯Java编写的开源项目管理工具, <span class="highlight">Maven</span>采用了一种被称之为Project Object Model (POM)概念来管理项目，所有的项目配置信息都被定义在一个叫做POM.xml的文件中.. <span class="highlight">Maven</span>是一款跨平台的项目管理工具，是一个开源的项目... <span class="highlight">Maven</span>主要服务于基于Java平台的项目构建、依赖管理和项目信息管理... POM怎么理解呢？？？ 我们使用Java是面向对象编程，对象就是我们的类 而<span class="highlight">Maven</span>是面向项目，把我们的项目看做成是一个对象来进行管理 为什么要使用<span class="highlight">Maven</span>
+                    </div>
+        
+        <div class="article-item-footer">
+        
+                        
+			            
+            			<span class="article-author article-create-time">
+				2018-04-08
+			</span>
+                        
+                        
+                        
+            
+            <a class="imv2-arrow3_r article-arrow" href="/article/25266" target="_blank"></a>   
+            <span class="article-view_num">
+				浏览 105			</span>
+            
+        </div>
+    </div>
+</div>
+<div class="article-item maxitemc">
+    
+        
+    <div class="article-item-c">
+        <a class="article-title" href="/article/22461" target="_blank">【<span class="highlight">maven</span>】dependency:analyze白名单</a>
+        <div class="article-item-desc">
+                            &lt;plugin&gt; &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; &lt;artifactId&gt;<span class="highlight">maven</span>-dependency-plugin&lt;/artifactId&gt; &lt;version&gt;3.0.0&lt;/version&gt; &lt;configuration&gt; &lt;
+                    </div>
+        
+        <div class="article-item-footer">
+        
+                        
+			            
+            			<span class="article-author article-create-time">
+				2018-01-01
+			</span>
+                        
+                        
+                        
+            
+            <a class="imv2-arrow3_r article-arrow" href="/article/22461" target="_blank"></a>   
+            <span class="article-view_num">
+				浏览 181			</span>
+            
+        </div>
+    </div>
+</div>
+<div class="article-item maxitemc">
+    
+        
+    <div class="article-item-c">
+        <a class="article-title" href="/article/22460" target="_blank">【<span class="highlight">maven</span>】dependency:analyze白名单</a>
+        <div class="article-item-desc">
+                            &lt;plugin&gt; &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; &lt;artifactId&gt;<span class="highlight">maven</span>-dependency-plugin&lt;/artifactId&gt; &lt;version&gt;3.0.0&lt;/version&gt; &lt;configuration&gt; &lt;
+                    </div>
+        
+        <div class="article-item-footer">
+        
+                        
+			            
+            			<span class="article-author article-create-time">
+				2018-01-01
+			</span>
+                        
+                        
+                        
+            
+            <a class="imv2-arrow3_r article-arrow" href="/article/22460" target="_blank"></a>   
+            <span class="article-view_num">
+				浏览 164			</span>
+            
+        </div>
+    </div>
+</div>
+<div class="article-item maxitemc">
+    
+        
+    <div class="article-item-c">
+        <a class="article-title" href="/article/19037" target="_blank"><span class="highlight">maven</span>的安装以及配置，检出SVN的项目</a>
+        <div class="article-item-desc">
+                            <span class="highlight">maven</span>的安装 1.下载合适版本的<span class="highlight">maven</span>压缩包。 2.解压到合适的文件夹位置。 3.配置<span class="highlight">maven</span>的环境变量。（和编译器配置环境变量一样） 4.检查<span class="highlight">maven</span>的环境是否配置成功。（mvn --version） <span class="highlight">maven</span>检出SVN的项目 1.从svn中import项目。 2.delete编译器中的项目，但是不删除工作空间的项目。 3.打开已存在的<span class="highlight">maven</span>项目，直接可以转换为<span class="highlight">maven</span>项目。 项目无法加载<span class="highlight">Maven</span> Dependencies包 解决方案：把文件夹以外的文件全部替换掉，重新更新即可。
+                    </div>
+        
+        <div class="article-item-footer">
+        
+                        
+			            
+            			<span class="article-author article-create-time">
+				2017-07-05
+			</span>
+                        
+            			<span class="article-author">
+				推荐 1
+			</span>
+                        
+                        
+            
+            <a class="imv2-arrow3_r article-arrow" href="/article/19037" target="_blank"></a>   
+            <span class="article-view_num">
+				浏览 639			</span>
+            
+        </div>
+    </div>
+</div>
+<div class="article-item maxitemc">
+    
+        
+    <div class="article-item-c">
+        <a class="article-title" href="/article/25317" target="_blank">java selenium 基于<span class="highlight">Maven</span>环境搭建</a>
+        <div class="article-item-desc">
+                            现在Java的大部分项目都是基于<span class="highlight">Maven</span>, &nbsp;在<span class="highlight">Maven</span>项目中使用Selenium2. 非常简单。&nbsp;首先你需要配置好<span class="highlight">Maven</span>的环境可以参考本博客的<span class="highlight">Maven</span>教程系列，<span class="highlight">Maven</span>入门教程(一) 安装和配置&nbsp;可见官方的文档&nbsp;新建一个<span class="highlight">Maven</span>的Project&nbsp;添加如下到你的POM.XML, 就可以了&lt;dependency&gt;
+                    </div>
+        
+        <div class="article-item-footer">
+        
+                        
+			            
+            			<span class="article-author article-create-time">
+				2018-04-09
+			</span>
+                        
+                        
+                        
+            
+            <a class="imv2-arrow3_r article-arrow" href="/article/25317" target="_blank"></a>   
+            <span class="article-view_num">
+				浏览 54			</span>
+            
+        </div>
+    </div>
+</div>
+					<a class="search-remind" href="/search/article?words=maven"><div>更多手记搜索结果</div></a>
+			
+	
+				
+			</div>
+            
+            <div class="search-recommend">
+                				<h3><span class="highlight">maven...</span>相关内容推荐</h3>
+								<ul class="moco-aside-course">
+
+                
+                
+		         <li>
+		            <div class="aside-course-img">
+		              <img alt="" src="//img1.sycdn.imooc.com/szimg/59eeba8b000114cc05400300-360-202.jpg">
+		              
+		                							<p class="aside-course-type">实战</p>
+		                		            </div>
+		            <div class="aside-course-content">
+		              						<a class="aside-course-name" href="//coding.imooc.com/class/125.html" target="_blank">基于Spring Boot技术栈博客系统企业级前后端实战</a>
+		                		              <p class="aside-course-price">
+                                                     ￥348.00
+                        </p><div class="aside-course-dot">
+		                <i class="imv2-dot_samll"></i>
+		              </div><p class="aside-course-grade">中级</p><div class="aside-course-dot">
+		                <i class="imv2-dot_samll"></i>
+		              </div><p class="aside-course-people">
+		                <i class="imv2-set-sns"></i>
+		                <span>911</span>
+		              </p>
+		            </div>
+		          </li>             
+
+                
+                
+		         <li>
+		            <div class="aside-course-img">
+		              <img alt="" src="//img1.sycdn.imooc.com/szimg/5a17ef670001292c05400300-360-202.jpg">
+		              
+		                							<p class="aside-course-type">实战</p>
+		                		            </div>
+		            <div class="aside-course-content">
+		              						<a class="aside-course-name" href="//coding.imooc.com/class/161.html" target="_blank">Webpack + React全栈工程架构项目实战精讲</a>
+		                		              <p class="aside-course-price">
+                                                     ￥348.00
+                        </p><div class="aside-course-dot">
+		                <i class="imv2-dot_samll"></i>
+		              </div><p class="aside-course-grade">高级</p><div class="aside-course-dot">
+		                <i class="imv2-dot_samll"></i>
+		              </div><p class="aside-course-people">
+		                <i class="imv2-set-sns"></i>
+		                <span>508</span>
+		              </p>
+		            </div>
+		          </li>             
+
+                
+                
+		         <li>
+		            <div class="aside-course-img">
+		              <img alt="" src="//img1.sycdn.imooc.com/szimg/5902b0510001c8d705400300-360-202.jpg">
+		              
+		                							<p class="aside-course-type">实战</p>
+		                		            </div>
+		            <div class="aside-course-content">
+		              						<a class="aside-course-name" href="//coding.imooc.com/class/49.html" target="_blank">MySQL提升课程 全面讲解MySQL架构设计</a>
+		                		              <p class="aside-course-price">
+                                                     ￥199.00
+                        </p><div class="aside-course-dot">
+		                <i class="imv2-dot_samll"></i>
+		              </div><p class="aside-course-grade">中级</p><div class="aside-course-dot">
+		                <i class="imv2-dot_samll"></i>
+		              </div><p class="aside-course-people">
+		                <i class="imv2-set-sns"></i>
+		                <span>2103</span>
+		              </p>
+		            </div>
+		          </li>             
+
+                
+                
+		         <li>
+		            <div class="aside-course-img">
+		              <img alt="" src="//climg.mukewang.com/59ae66c5000139d906000338.jpg">
+		              
+		                							<p class="aside-course-type">路径</p>
+		                		            </div>
+		            <div class="aside-course-content">
+		              		                <a class="aside-course-name" href="//class.imooc.com/sc/35" target="_blank">进击JavaScript核心</a>
+		              		              <p class="aside-course-price">
+                                                     ￥399.00
+                        </p><div class="aside-course-dot">
+		                <i class="imv2-dot_samll"></i>
+		              </div><p class="aside-course-grade">2步骤/12门课</p><div class="aside-course-dot">
+		                <i class="imv2-dot_samll"></i>
+		              </div><p class="aside-course-people">
+		                <i class="imv2-set-sns"></i>
+		                <span>447</span>
+		              </p>
+		            </div>
+		          </li>             
+
+                
+                
+		         <li>
+		            <div class="aside-course-img">
+		              <img alt="" src="//climg.mukewang.com/5b2321fe00015ca806000338.jpg">
+		              
+		                							<p class="aside-course-type">路径</p>
+		                		            </div>
+		            <div class="aside-course-content">
+		              		                <a class="aside-course-name" href="//class.imooc.com/sc/45" target="_blank">PHP高级应用及Laravel5初识</a>
+		              		              <p class="aside-course-price">
+                                                     ￥668.00
+                        </p><div class="aside-course-dot">
+		                <i class="imv2-dot_samll"></i>
+		              </div><p class="aside-course-grade">3步骤/21门课</p><div class="aside-course-dot">
+		                <i class="imv2-dot_samll"></i>
+		              </div><p class="aside-course-people">
+		                <i class="imv2-set-sns"></i>
+		                <span>78</span>
+		              </p>
+		            </div>
+		          </li>             
+
+                 
+                                
+                				<h3><span class="highlight">maven...</span>相关讲师</h3> 
+				<div class="recommend-teacher">
+                                                            <input type="hidden" value="0">
+                    					<a href="/u/184799" target="_blank">
+						<img alt="sqlercn" src="//img3.sycdn.imooc.com/5ad7144100017a5e07410741-100-100.jpg">
+						<span>sqlercn</span>
+					</a>
+                                                            <input type="hidden" value="1">
+                    					<a href="/u/1352822" target="_blank">
+						<img alt="Jeson老师" src="//img2.sycdn.imooc.com/5510c7a600016ea802200220-100-100.jpg">
+						<span>Jeson老师</span>
+					</a>
+                                                            <input type="hidden" value="2">
+                    					<a href="/u/1961093" target="_blank">
+						<img alt="Mushishi_Xu" src="//img2.sycdn.imooc.com/57df9bcd000195e810231024-100-100.jpg">
+						<span>Mushishi_Xu</span>
+					</a>
+                                                            <input type="hidden" value="3">
+                    					<a href="/u/2255006" target="_blank">
+						<img alt="__bobby" src="//img4.sycdn.imooc.com/58d9c48f0001ad0304070270-100-100.jpg">
+						<span>__bobby</span>
+					</a>
+                                                            <input type="hidden" value="4">
+                    					<a href="/u/2726958" target="_blank">
+						<img alt="skyding" src="//img2.sycdn.imooc.com/591c550d0001e23c04190419-100-100.jpg">
+						<span>skyding</span>
+					</a>
+                                                            <input type="hidden" value="5">
+                    					<a href="/u/2781843" target="_blank">
+						<img alt="Michael__PK" src="//img2.sycdn.imooc.com/533e4d510001c2ad02000200-100-100.jpg">
+						<span>Michael__PK</span>
+					</a>
+                                                            <input type="hidden" value="6">
+                    					<a href="/u/3083408" target="_blank">
+						<img alt="Jokcy" src="//img2.sycdn.imooc.com/5a697c950001262b05790578-100-100.jpg">
+						<span>Jokcy</span>
+					</a>
+                                                            <input type="hidden" value="7">
+                    					<a href="/u/4842271" target="_blank">
+						<img alt="老卫" src="//img1.sycdn.imooc.com/58ef8de70001964301810181-100-100.jpg">
+						<span>老卫</span>
+					</a>
+                                        				</div>
+                                
+                				<h3><span class="highlight">maven...</span>相关搜索内容推荐</h3>
+				<ul class="recommend-article">
+                    					<li><a href="/search/?words=maven教程">maven教程</a></li>
+                    					<li><a href="/search/?words=maven入门">maven入门</a></li>
+                    					<li><a href="/search/?words=maven多模块">maven多模块</a></li>
+                    					<li><a href="/search/?words=maven项目">maven项目</a></li>
+                    				</ul>
+                			</ul></div>
+		</div>
+	</div>
+    </div>
+	   <div id="menu4" class="container tab-pane fade"><br>
+      <div id="base" class="">
+
+      <!-- Unnamed (矩形) -->
+      <div id="u784" class="ax_default box_1">
+        <div id="u784_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u785" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u786" class="ax_default box_1">
+        <div id="u786_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u787" class="text">
+          <p><span>logo</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u788" class="ax_default box_1">
+        <div id="u788_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u789" class="text">
+          <p><span>首页</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u790" class="ax_default box_1">
+        <div id="u790_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u791" class="text">
+          <p><span>分类</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (文本框) -->
+      <div id="u792" class="ax_default text_field">
+        <input id="u792_input" type="text" value=""/>
+      </div>
+
+      <!-- Unnamed (提交按钮) -->
+      <div id="u793" class="ax_default html_button">
+        <input id="u793_input" type="submit" value="搜索"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u794" class="ax_default box_1">
+        <div id="u794_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u795" class="text">
+          <p><span>登录</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u796" class="ax_default box_1">
+        <div id="u796_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u797" class="text">
+          <p><span>注册</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u798" class="ax_default image">
+        <img id="u798_img" class="img " src="images/直播（首页）/u690.png"/>
+        <!-- Unnamed () -->
+        <div id="u799" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u800" class="ax_default box_1">
+        <div id="u800_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u801" class="text">
+          <p><span>全部分类</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u802" class="ax_default image">
+        <img id="u802_img" class="img " src="images/分类/u802.png"/>
+        <!-- Unnamed () -->
+        <div id="u803" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u804" class="ax_default box_1">
+        <div id="u804_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u805" class="text">
+          <p><span>高等数学</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u806" class="ax_default box_1">
+        <div id="u806_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u807" class="text">
+          <p><span>英语六级</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u808" class="ax_default box_1">
+        <div id="u808_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u809" class="text">
+          <p><span>线性代数</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u810" class="ax_default box_1">
+        <div id="u810_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u811" class="text">
+          <p><span>概率论与数理统计</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u812" class="ax_default box_1">
+        <div id="u812_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u813" class="text">
+          <p><span>英语四级</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u814" class="ax_default box_1">
+        <div id="u814_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u815" class="text">
+          <p><span>大学物理</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u816" class="ax_default box_1">
+        <div id="u816_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u817" class="text">
+          <p><span>思修</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u818" class="ax_default box_1">
+        <div id="u818_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u819" class="text">
+          <p><span>英语口语</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u820" class="ax_default box_1">
+        <div id="u820_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u821" class="text">
+          <p><span>毛概</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u822" class="ax_default box_1">
+        <div id="u822_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u823" class="text">
+          <p><span>马原</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u824" class="ax_default image">
+        <img id="u824_img" class="img " src="images/分类/u802.png"/>
+        <!-- Unnamed () -->
+        <div id="u825" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u826" class="ax_default image">
+        <img id="u826_img" class="img " src="images/分类/u802.png"/>
+        <!-- Unnamed () -->
+        <div id="u827" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u828" class="ax_default image">
+        <img id="u828_img" class="img " src="images/分类/u802.png"/>
+        <!-- Unnamed () -->
+        <div id="u829" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u830" class="ax_default image">
+        <img id="u830_img" class="img " src="images/分类/u802.png"/>
+        <!-- Unnamed () -->
+        <div id="u831" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u832" class="ax_default image">
+        <img id="u832_img" class="img " src="images/分类/u802.png"/>
+        <!-- Unnamed () -->
+        <div id="u833" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u834" class="ax_default image">
+        <img id="u834_img" class="img " src="images/分类/u802.png"/>
+        <!-- Unnamed () -->
+        <div id="u835" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u836" class="ax_default image">
+        <img id="u836_img" class="img " src="images/分类/u802.png"/>
+        <!-- Unnamed () -->
+        <div id="u837" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u838" class="ax_default image">
+        <img id="u838_img" class="img " src="images/分类/u802.png"/>
+        <!-- Unnamed () -->
+        <div id="u839" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u840" class="ax_default image">
+        <img id="u840_img" class="img " src="images/分类/u802.png"/>
+        <!-- Unnamed () -->
+        <div id="u841" class="text" style="display:none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+    </div>
+    </div>
+	   <div id="menu5" class="container tab-pane fade"><br>
+      <h3>问题反馈</h3>
+      <p>有问题就在这里说出来</p>
+    </div>
+  
+
+	</div>
+	   </div>
+	   <div id="foot" class="col-12">
+		   <ul>
+			   <li><p>联系地址：江苏省徐州市中国矿业大学南湖校区</p></li>
+			   <li><p>联系邮箱：2414782779@qq.com</p></li>
+		   </ul>
+	   </div>
+	  </div>   
+  </body>
+</html>

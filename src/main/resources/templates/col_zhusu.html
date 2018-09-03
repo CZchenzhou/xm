@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>住宿条件</title>
+	<link rel="stylesheet" href="/css/col_base.css">
+	<style>
+	.body-r ul {
+		padding-top: 10px;
+		padding-left: 80px;
+		float: left;
+		width: 30%;
+	}
+	.body-r ul li {
+		font:28px Arial;
+		font-weight: 700;
+		color: #363636;
+		line-height: 66px;
+	}
+	</style>
+</head>
+<body>
+<!-- 顶部开始 -->
+	<div class="top w clearfix">
+		<div class="header-l fl">
+			<img src="/images/col_head.png" />
+			<ul>
+				<li><a href="index">返回首页</a></li>
+				<li><a href="col_zhuanye">学院专业</a></li>
+				<li><a href="col_sheshi">校园设施</a></li>
+				<li><a href="col_zhusu">住宿条件</a></li>
+				<li><a href="col_jiaotong">交通环境</a></li>
+			</ul>
+		</div>
+		<div class="header-r fl">
+			<a href="loginPage" th:if="${session.loginUser==null}">登陆</a>
+			<a href="logupPage" th:if="${session.loginUser==null}">注册</a>
+			<span class="btn btn-default" href="" role="button" th:if="${session.loginUser!=null}" th:text="${session.loginUser}"></span>
+		</div>
+	</div>
+<!-- 顶部结束 -->
+<!-- 内容开始 -->
+<div class="body w clearfix">
+	<div class="body-l fl">
+		<h3>
+			<img src="/images/col_speaker.png"/> 今日热点
+		</h3>
+		<ul>
+			<li>1、热水洗浴</li>
+			<li>2、饮水机</li>
+			<li>3、直饮水</li>
+			<li>4、空调</li>
+		</ul>
+	</div>
+	<div class="body-r fl">
+		<img src="/images/col_body.png" />
+		<ul>
+			<li>宿舍布局</li>
+			<li>门禁时间</li>
+			<li>饮水机</li>
+			<li>空调</li>
+			<li>断网时间</li>
+			<li>违章案例</li>
+		</ul>
+		<ul>
+			<li>楼层分布</li>
+			<li>热水时间</li>
+			<li>直饮水</li>
+			<li>风扇</li>
+			<li>熄灯时间</li>
+			<li>可用电器</li>
+		</ul>
+	</div>
+</div>
+<!-- 内容结束 -->
+<!-- 底部开始 -->
+<div class="footer w">
+	<div class="footer-l fl">
+		<img src="/images/col_speaker.png" />
+	</div>
+	<div class="footer-r fl">
+		<p>网站正在升级维护中，敬请期待！<br/>
+		有事可咨询拨打客服电话：18722225555
+		</p>
+	</div>
+</div>
+<!-- 底部结束 -->
+</body>
+</html>
