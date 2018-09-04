@@ -31,19 +31,15 @@ public class CollegeController {
 //    }
 
 
-    @GetMapping("/col_zhuanye")
-        public String col_zhuanye(HttpSession session){
-        String schoolName= (String) session.getAttribute("school");
-        Integer schoolId=schoolService.getSchoolByFullname(schoolName);
-        System.out.println(schoolId);
-        List<Subject> subjectList=zhuanyeService.getAllSubjectsBySchoolId(schoolId);
-        System.out.println(subjectList);
-        if(subjectList!=null) {
-            for (Subject s : subjectList) {
-                System.out.println(s.getSubjectName());
-            }
-            session.setAttribute("subjects", subjectList);
-        }
-        return "col_zhuanye";
-    }
+//    @GetMapping("/col_zhuanye")
+//    public String col_zhuanye(HttpSession session) {
+//        String schoolName = (String) session.getAttribute("school");
+//        Integer schoolId = schoolService.getSchoolByFullname(schoolName);
+//        List<Subject> subjectList = zhuanyeService.getAllSubjectsBySchoolId(schoolId);
+//        for(Subject s:subjectList){
+//            System.out.println(s.getSubjectName());
+//        }
+//        session.setAttribute("subjects", subjectList);
+//        return "redirect:col_zhuanye";
+//    }
 }

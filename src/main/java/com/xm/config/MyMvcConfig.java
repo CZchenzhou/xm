@@ -22,7 +22,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
                 registry.addViewController("/col_index").setViewName("col_index");
                 registry.addViewController("/col_jiaotong").setViewName("col_jiaotong");
                 registry.addViewController("/col_sheshi").setViewName("col_sheshi");
-//                registry.addViewController("/col_zhuanye").setViewName("col_zhuanye");
+                registry.addViewController("/col_zhuanye").setViewName("col_zhuanye");
                 registry.addViewController("/col_zhusu").setViewName("col_zhusu");
                 registry.addViewController("/com_index").setViewName("com_index");
                 registry.addViewController("/stu_index").setViewName("stu_index");
