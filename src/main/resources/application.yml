@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://cdb-0fqfm8kq.cd.tencentcdb.com:10013/xm
+    url: jdbc:mysql://cdb-lvhilap0.bj.tencentcdb.com:10031/bc
     username: root
-    password: liuhongchen123
+    password: 020918quan
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     initialSize: 5
